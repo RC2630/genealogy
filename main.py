@@ -5,7 +5,9 @@ from collections import deque
 from helpers.ansi_codes import green, blue, red
 
 INPUT_FILE: Final[str] = "files/input.md"
+COMMON_NAMES_FILE: Final[str] = "files/common_names.txt"
 PEOPLE: dict[str, Person] = {}
+COMMON_NAMES: dict[tuple[str, ...], dict[str, str]] = {}
 
 GENDERED_TERMS: dict[tuple[str, str], str] = {
     ("parent", "M"): "father", ("parent", "F"): "mother",
@@ -116,6 +118,16 @@ def parse_input_file() -> None:
 
 # ----------------------------------------------------------
 
+def parse_common_names() -> None:
+    with open(COMMON_NAMES_FILE, "r") as f:
+        lines: list[str] = f.read().split("\n")
+    for line in lines:
+        if m := re.match(r"(.+) : (.+), (.+)", line):
+            chain: tuple[str, ...] = tuple(m.group(1).split(" "))
+            COMMON_NAMES[chain] = {}
+            COMMON_NAMES[chain]["M"] = m.group(2)
+            COMMON_NAMES[chain]["F"] = m.group(3)
+
 def remove_leading_whitespaces(s: str) -> str:
     return "\n".join([line.lstrip() for line in s.split("\n")])
 
@@ -150,7 +162,50 @@ def find_chain() -> None:
 
 def get_gendered(rel: str, name: str) -> str:
     return GENDERED_TERMS[(rel, PEOPLE[name].gender)]
-            
+
+# ----------------------------------------------------------
+
+def compress_at(path: Path, start_index: int) -> Path:
+    path[start_index] # raises IndexError if out of bounds
+    end_index: int = len(path)
+    while True:
+        subpath: Path = path[start_index:end_index]
+        if len(subpath) <= 1:
+            return path
+        subpath_rels: tuple[str, ...] = tuple(rel for rel, name in subpath)
+        if subpath_rels not in COMMON_NAMES:
+            end_index -= 1
+            continue
+        path_before: Path = path[:start_index]
+        path_after: Path = path[end_index:]
+        new_name: str = subpath[-1][1]
+        new_rel: str = COMMON_NAMES[subpath_rels][PEOPLE[new_name].gender]
+        return path_before + [(new_rel, new_name)] + path_after
+
+def compress_one_round(path: Path) -> Path:
+    index: int = 0
+    while True:
+        try:
+            path = compress_at(path, index)
+            index += 1
+        except IndexError:
+            return path
+
+def compress_all_rounds(path: Path) -> Path:
+    compressed: Path = compress_one_round(path)
+    if compressed == path:
+        return compressed
+    else:
+        return compress_all_rounds(compressed)
+    
+def compress(path: Path) -> Path:
+    compressed: Path = compress_all_rounds(path)
+    final_path: Path = []
+    for rel, name in compressed:
+        new_rel: str = GENDERED_TERMS.get((rel, PEOPLE[name].gender), rel)
+        final_path.append((new_rel, name))
+    return final_path
+
 # ----------------------------------------------------------
 
 def ungendered_with_names(chain: Path) -> str:
@@ -177,7 +232,10 @@ def numbered_representation(chain: Path) -> list[int]:
     return numbered_repr
 
 def common_name(chain: Path) -> str:
-    return red("(TO BE IMPLEMENTED)")
+    if len(chain) == 0:
+        return "self"
+    else:
+        return "'s ".join(rel for rel, name in compress(chain))
 
 def generational_difference(chain: Path) -> int:
     return sum(numbered_representation(chain))
@@ -209,6 +267,7 @@ def run_program() -> None:
         return
 
     parse_input_file()
+    parse_common_names()
     option: str = argv[1]
 
     if option == "d":
