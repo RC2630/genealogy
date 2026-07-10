@@ -292,6 +292,7 @@ class ConsanguineousPart:
     final_name: str
     up_down_coordinates: tuple[int, int] | None
     canonical_term: str
+    is_half: bool = False
 
     def fill_in_up_down_coordinates(self) -> None:
         if "spouse" in self.primitive_chain:
@@ -307,6 +308,8 @@ class ConsanguineousPart:
                 up += 1
                 down += 1
         self.up_down_coordinates = (up, down)
+        if up >= 1 and down >= 1 and "sibling" not in self.primitive_chain:
+            self.is_half = True
 
     def fill_in_canonical_term(self) -> None:
         is_male: bool = PEOPLE[self.final_name].gender == "M"
@@ -357,6 +360,8 @@ class ConsanguineousPart:
             self.canonical_term = \
                 f"{ordinal_number(min(up, down) - 1)} cousin " \
                 f"{multiplicative_number(abs(up - down))} removed"
+        if self.is_half:
+            self.canonical_term = "half-" + self.canonical_term
             
     def __repr__(self) -> str:
         up_down: str = \
