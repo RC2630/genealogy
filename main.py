@@ -1,9 +1,9 @@
-from typing import Final
+from typing import Final, override
 import re
 from sys import argv
 from collections import deque
 from helpers.ansi_codes import green, blue, red, yellow
-from dataclasses import dataclass
+from abc import ABC, abstractmethod
 
 INPUT_FILE: Final[str] = "files/input.md"
 COMMON_NAMES_FILE: Final[str] = "files/common_names.txt"
@@ -271,11 +271,11 @@ def numbered_representation(chain: Path) -> list[int]:
             numbered_repr += curr_repr[1:]
     return numbered_repr
 
-def common_name(chain: Path) -> str:
+def common_name(chain: Path, do_compress: bool) -> str:
     if len(chain) == 0:
         return "self"
     else:
-        return "'s ".join(rel for rel, name in compress(chain))
+        return "'s ".join(rel for rel, name in (compress(chain) if do_compress else chain))
 
 def generational_difference(chain: Path) -> int:
     return sum(numbered_representation(chain))
@@ -285,15 +285,41 @@ def distance(chain: Path) -> int:
 
 # ----------------------------------------------------------
 
-@dataclass
-class ConsanguineousPart:
+class Part(ABC):
 
-    primitive_chain: list[str]
-    final_name: str
-    up_down_coordinates: tuple[int, int] | None
-    canonical_term: str
-    is_half: bool = False
+    @abstractmethod
+    def __init__(self, primitive_chain: list[str], final_name: str) -> None:
+        ...
+    
+    @abstractmethod
+    def fill_in_up_down_coordinates(self) -> None:
+        ...
 
+    @abstractmethod
+    def fill_in_canonical_term(self) -> None:
+        ...
+    
+    @abstractmethod
+    def __repr__(self) -> str:
+        ...
+
+    @abstractmethod
+    def convert_to_tuple(self) -> tuple[str, str]:
+        ...
+
+# ----------------------------------------------------------
+
+class ConsanguineousPart(Part):
+
+    @override
+    def __init__(self, primitive_chain: list[str], final_name: str) -> None:
+        self.primitive_chain: list[str] = primitive_chain.copy()
+        self.final_name: str = final_name
+        self.up_down_coordinates: tuple[int, int] | None = None
+        self.canonical_term: str = ""
+        self.is_half: bool = False
+
+    @override
     def fill_in_up_down_coordinates(self) -> None:
         if "spouse" in self.primitive_chain:
             return
@@ -311,6 +337,7 @@ class ConsanguineousPart:
         if up >= 1 and down >= 1 and "sibling" not in self.primitive_chain:
             self.is_half = True
 
+    @override
     def fill_in_canonical_term(self) -> None:
         is_male: bool = PEOPLE[self.final_name].gender == "M"
         if self.up_down_coordinates is None:
@@ -362,43 +389,106 @@ class ConsanguineousPart:
                 f"{multiplicative_number(abs(up - down))} removed"
         if self.is_half:
             self.canonical_term = "half-" + self.canonical_term
-            
+
+    @override
     def __repr__(self) -> str:
         up_down: str = \
             f" {yellow(str(self.up_down_coordinates))}" if self.up_down_coordinates else ""
         return f"{red(self.canonical_term)}{up_down} ({green(self.final_name)})"
+    
+    @override
+    def convert_to_tuple(self) -> tuple[str, str]:
+        return (self.canonical_term, self.final_name)
 
 # ----------------------------------------------------------
 
-def should_start_new(prev_rel: str, next_rel: str) -> bool:
+class AnyPart(Part):
+    
+    @override
+    def __init__(self, primitive_chain: list[str], final_name: str) -> None:
+        self.is_step: bool = False
+        self.is_in_law: bool = False
+        self.canonical_term: str = ""
+        self.final_name: str = final_name
+        if all(rel == "spouse" for rel in primitive_chain):
+            self.consanguineous_part = ConsanguineousPart(primitive_chain, final_name)
+            return
+        for i, rel in enumerate(temp := [""] + primitive_chain + [""]):
+            if rel == "spouse":
+                if temp[i-1] == "parent" or temp[i+1] == "child":
+                    self.is_step = True
+                else:
+                    self.is_in_law = True
+        primitive_chain = \
+            "|".join(primitive_chain).replace("parent|spouse|child", "sibling").split("|")
+        no_spouses: list[str] = [rel for rel in primitive_chain if rel != "spouse"]
+        self.consanguineous_part = ConsanguineousPart(no_spouses, final_name)
+
+    @override
+    def fill_in_up_down_coordinates(self) -> None:
+        self.consanguineous_part.fill_in_up_down_coordinates()
+
+    @override
+    def fill_in_canonical_term(self) -> None:
+        self.consanguineous_part.fill_in_canonical_term()
+        self.canonical_term = \
+            ("step-" if self.is_step else "") + \
+            self.consanguineous_part.canonical_term + \
+            ("-in-law" if self.is_in_law else "")
+
+    @override
+    def __repr__(self) -> str:
+        return f"{red(self.canonical_term)} ({green(self.final_name)})"
+    
+    @override
+    def convert_to_tuple(self) -> tuple[str, str]:
+        return (self.canonical_term, self.final_name)
+
+# ----------------------------------------------------------
+
+def should_start_new(prev_rel: str, next_rel: str, part_type: type[Part]) -> bool:
     if prev_rel == "spouse" or next_rel == "spouse":
-        return True
+        return part_type is ConsanguineousPart
     if prev_rel == "parent" or next_rel == "child":
         return False
     else:
         return True
+    
+def get_prev_rel(curr_part: Path, part_type: type[Part]) -> str:
+    if part_type is ConsanguineousPart:
+        return curr_part[-1][0]
+    else:
+        for rel, name in reversed(curr_part):
+            if rel != "spouse":
+                return rel
+        return "spouse"
 
-def decompose(chain: Path) -> list[Path]:
+def decompose(chain: Path, part_type: type[Part]) -> list[Path]:
     parts: list[Path] = []
     for rel, name in chain:
-        if len(parts) == 0 or should_start_new(parts[-1][-1][0], rel):
+        if len(parts) == 0 or should_start_new(get_prev_rel(parts[-1], part_type), rel, part_type):
             parts.append([(rel, name)])
         else:
             parts[-1].append((rel, name))
     return parts
 
-def transform(raw_parts: list[Path]) -> list[ConsanguineousPart]:
-    parts: list[ConsanguineousPart] = [ConsanguineousPart(
-        [rel for rel, name in subchain], subchain[-1][1], None, ""
+def transform(raw_parts: list[Path], part_type: type[Part]) -> list[Part]:
+    parts: list[Part] = [part_type(
+        [rel for rel, name in subchain], subchain[-1][1]
     ) for subchain in raw_parts]
     for part in parts:
         part.fill_in_up_down_coordinates()
         part.fill_in_canonical_term()
     return parts
 
-def consanguineous_decomposition(chain: Path) -> str:
-    parts: list[ConsanguineousPart] = transform(decompose(chain))
+def decompose_and_format(chain: Path, part_type: type[Part]) -> str:
+    parts: list[Part] = transform(decompose(chain, part_type), part_type)
     return " -> ".join(str(part) for part in parts)
+
+def decompose_and_naturalize(chain: Path, part_type: type[Part]) -> str:
+    parts: list[Part] = transform(decompose(chain, part_type), part_type)
+    parts_as_path: Path = [part.convert_to_tuple() for part in parts]
+    return common_name(parts_as_path, do_compress = False)
 
 # ----------------------------------------------------------
 
@@ -409,10 +499,13 @@ def display_full_chain_info(chain: Path) -> None:
         {blue('Gendered chain with names:')} {gendered_with_names(chain)}
         {blue('Gendered chain without names:')} {gendered_without_names(chain)}
         {blue('Numbered representation:')} {numbered_representation(chain)}
-        {blue('Common name:')} {common_name(chain)}
         {blue('Generational difference:')} {generational_difference(chain)}
         {blue('Distance:')} {distance(chain)}
-        {blue('Consanguineous decomposition:')} {consanguineous_decomposition(chain)}"""
+        {blue('Consanguineous decomposition:')} {decompose_and_format(chain, ConsanguineousPart)}
+        {blue('Canonical decomposition:')} {decompose_and_format(chain, AnyPart)}
+        {blue('Common name 1:')} {common_name(chain, do_compress = True)}
+        {blue('Common name 2:')} {decompose_and_naturalize(chain, ConsanguineousPart)}
+        {blue('Common name 3:')} {decompose_and_naturalize(chain, AnyPart)}"""
     ))
 
 # ----------------------------------------------------------
