@@ -2,7 +2,8 @@ from typing import Final
 import re
 from sys import argv
 from collections import deque
-from helpers.ansi_codes import green, blue, red
+from helpers.ansi_codes import green, blue, red, yellow
+from dataclasses import dataclass
 
 INPUT_FILE: Final[str] = "files/input.md"
 COMMON_NAMES_FILE: Final[str] = "files/common_names.txt"
@@ -146,22 +147,61 @@ def display_all() -> None:
     for person in PEOPLE.values():
         print(f"\n{person}")
 
+def find_person_from_dict(key: str) -> Person:
+    try:
+        return next(
+            person for name, person in PEOPLE.items()
+            if name.lower() == key.lower()
+        )
+    except StopIteration:
+        return next(
+            person for name, person in PEOPLE.items()
+            if name.lower().startswith(key.lower())
+        )
+
 def find_chain() -> None:
-    name_1: str = input("\nEnter name of person 1: ")
-    name_2: str = input("Enter name of person 2: ")
-    person_1: Person = PEOPLE[name_1]
-    person_2: Person = PEOPLE[name_2]
+    try:
+        name_1: str = input("\nEnter name of person 1: ")
+        person_1: Person = find_person_from_dict(name_1)
+        name_2: str = input("Enter name of person 2: ")
+        person_2: Person = find_person_from_dict(name_2)
+    except StopIteration:
+        print("\nThere is no known person with the name you entered.")
+        return
     chain: Path | None = person_1.find(person_2)
     if chain is None:
         print("\nThere is no chain of relationships connecting these two people.")
         return
-    print(f"\nChain of relationships from {green(name_1)} to {green(name_2)}:")
+    print(f"\nChain of relationships from {green(person_1.name)} to {green(person_2.name)}:")
     display_full_chain_info(chain)
-    print(f"\nChain of relationships from {green(name_2)} to {green(name_1)}:")
-    display_full_chain_info(reverse_path(chain, name_1))
+    print(f"\nChain of relationships from {green(person_2.name)} to {green(person_1.name)}:")
+    display_full_chain_info(reverse_path(chain, person_1.name))
 
 def get_gendered(rel: str, name: str) -> str:
     return GENDERED_TERMS[(rel, PEOPLE[name].gender)]
+
+def ordinal_number(n: int) -> str:
+    s: str = str(n)
+    if s.endswith(("11", "12", "13")):
+        return s + "th"
+    elif s.endswith("1"):
+        return s + "st"
+    elif s.endswith("2"):
+        return s + "nd"
+    elif s.endswith("3"):
+        return s + "rd"
+    else:
+        return s + "th"
+    
+def multiplicative_number(n: int) -> str:
+    if n == 1:
+        return "once"
+    elif n == 2:
+        return "twice"
+    elif n == 3:
+        return "thrice"
+    else:
+        return f"{n} times"
 
 # ----------------------------------------------------------
 
@@ -243,6 +283,120 @@ def generational_difference(chain: Path) -> int:
 def distance(chain: Path) -> int:
     return len(chain)
 
+# ----------------------------------------------------------
+
+@dataclass
+class ConsanguineousPart:
+
+    primitive_chain: list[str]
+    final_name: str
+    up_down_coordinates: tuple[int, int] | None
+    canonical_term: str
+
+    def fill_in_up_down_coordinates(self) -> None:
+        if "spouse" in self.primitive_chain:
+            return
+        up: int = 0
+        down: int = 0
+        for primitive in self.primitive_chain:
+            if primitive == "parent":
+                up += 1
+            elif primitive == "child":
+                down += 1
+            elif primitive == "sibling":
+                up += 1
+                down += 1
+        self.up_down_coordinates = (up, down)
+
+    def fill_in_canonical_term(self) -> None:
+        is_male: bool = PEOPLE[self.final_name].gender == "M"
+        if self.up_down_coordinates is None:
+            self.canonical_term = "husband" if is_male else "wife"
+            return
+        up: int = self.up_down_coordinates[0]
+        down: int = self.up_down_coordinates[1]
+        if up == 0:
+            if down == 0:
+                self.canonical_term = "self"
+            elif down == 1:
+                self.canonical_term = "son" if is_male else "daughter"
+            elif down == 2:
+                self.canonical_term = "grandson" if is_male else "granddaughter"
+            elif down >= 3:
+                self.canonical_term = \
+                    (down - 2) * "great-" + ("grandson" if is_male else "granddaughter")
+        elif down == 0:
+            if up == 1:
+                self.canonical_term = "father" if is_male else "mother"
+            elif up == 2:
+                self.canonical_term = "grandfather" if is_male else "grandmother"
+            elif up >= 3:
+                self.canonical_term = \
+                    (up - 2) * "great-" + ("grandfather" if is_male else "grandmother")
+        elif up == 1:
+            if down == 1:
+                self.canonical_term = "brother" if is_male else "sister"
+            elif down == 2:
+                self.canonical_term = "nephew" if is_male else "niece"
+            elif down == 3:
+                self.canonical_term = "grandnephew" if is_male else "grandniece"
+            elif down >= 4:
+                self.canonical_term = \
+                    (down - 3) * "great-" + ("grandnephew" if is_male else "grandniece")
+        elif down == 1:
+            if up == 2:
+                self.canonical_term = "uncle" if is_male else "aunt"
+            elif up == 3:
+                self.canonical_term = "great-uncle" if is_male else "great-aunt"
+            elif up >= 4:
+                self.canonical_term = \
+                    (up - 3) * "great-" + ("granduncle" if is_male else "grandaunt")
+        elif up == down:
+            self.canonical_term = ordinal_number(up - 1) + " cousin"
+        else:
+            self.canonical_term = \
+                f"{ordinal_number(min(up, down) - 1)} cousin " \
+                f"{multiplicative_number(abs(up - down))} removed"
+            
+    def __repr__(self) -> str:
+        up_down: str = \
+            f" {yellow(str(self.up_down_coordinates))}" if self.up_down_coordinates else ""
+        return f"{red(self.canonical_term)}{up_down} ({green(self.final_name)})"
+
+# ----------------------------------------------------------
+
+def should_start_new(prev_rel: str, next_rel: str) -> bool:
+    if prev_rel == "spouse" or next_rel == "spouse":
+        return True
+    if prev_rel == "parent" or next_rel == "child":
+        return False
+    else:
+        return True
+
+def decompose(chain: Path) -> list[Path]:
+    parts: list[Path] = []
+    for rel, name in chain:
+        if len(parts) == 0 or should_start_new(parts[-1][-1][0], rel):
+            parts.append([(rel, name)])
+        else:
+            parts[-1].append((rel, name))
+    return parts
+
+def transform(raw_parts: list[Path]) -> list[ConsanguineousPart]:
+    parts: list[ConsanguineousPart] = [ConsanguineousPart(
+        [rel for rel, name in subchain], subchain[-1][1], None, ""
+    ) for subchain in raw_parts]
+    for part in parts:
+        part.fill_in_up_down_coordinates()
+        part.fill_in_canonical_term()
+    return parts
+
+def consanguineous_decomposition(chain: Path) -> str:
+    parts: list[ConsanguineousPart] = transform(decompose(chain))
+    return " -> ".join(str(part) for part in parts)
+
+# ----------------------------------------------------------
+
 def display_full_chain_info(chain: Path) -> None:
     print(remove_leading_whitespaces(
         f"""{blue('Ungendered chain with names:')} {ungendered_with_names(chain)}
@@ -252,7 +406,8 @@ def display_full_chain_info(chain: Path) -> None:
         {blue('Numbered representation:')} {numbered_representation(chain)}
         {blue('Common name:')} {common_name(chain)}
         {blue('Generational difference:')} {generational_difference(chain)}
-        {blue('Distance:')} {distance(chain)}"""
+        {blue('Distance:')} {distance(chain)}
+        {blue('Consanguineous decomposition:')} {consanguineous_decomposition(chain)}"""
     ))
 
 # ----------------------------------------------------------
