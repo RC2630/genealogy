@@ -126,6 +126,14 @@ class Person:
                 sibling.add_relative("parent", mother_name)
         assert len(self.parents) == 2
 
+    def is_descendant_of(self, candidate_ancestor: Person) -> bool:
+        if self.is_founder:
+            return False
+        if candidate_ancestor in self.parents:
+            return True
+        return self.parents[0].is_descendant_of(candidate_ancestor) or \
+               self.parents[1].is_descendant_of(candidate_ancestor)
+
 # ----------------------------------------------------------
 
 def parse_input_file() -> None:
@@ -216,9 +224,9 @@ def find_chain() -> None:
         print("\nThere is no chain of relationships connecting these two people.")
         return
     print(f"\nChain of relationships from {green(person_1.name)} to {green(person_2.name)}:")
-    display_full_chain_info(chain)
+    display_full_chain_info(chain, person_1, person_2)
     print(f"\nChain of relationships from {green(person_2.name)} to {green(person_1.name)}:")
-    display_full_chain_info(reverse_path(chain, person_1.name))
+    display_full_chain_info(reverse_path(chain, person_1.name), person_2, person_1)
 
 def get_gendered(rel: str, name: str) -> str:
     return GENDERED_TERMS[(rel, PEOPLE[name].gender)]
@@ -535,7 +543,19 @@ def decompose_and_naturalize(chain: Path, part_type: type[Part]) -> str:
 
 # ----------------------------------------------------------
 
-def display_full_chain_info(chain: Path) -> None:
+def relatedness(p1: Person, p2: Person) -> float:
+    if p1 is p2: # base case 1
+        return 1 if p1.is_founder else 1 + 0.5 * relatedness(p1.parents[0], p1.parents[1])
+    elif p2.is_descendant_of(p1): # swap the arguments
+        return relatedness(p2, p1)
+    elif p1.is_founder: # base case 2
+        return 0
+    else: # recurse until same person or founder is reached
+        return 1/2 * relatedness(p1.parents[0], p2) + 1/2 * relatedness(p1.parents[1], p2)
+
+# ----------------------------------------------------------
+
+def display_full_chain_info(chain: Path, p1: Person, p2: Person) -> None:
     print(remove_leading_whitespaces(
         f"""{blue('Ungendered chain with names:')} {ungendered_with_names(chain)}
         {blue('Ungendered chain without names:')} {ungendered_without_names(chain)}
@@ -544,6 +564,7 @@ def display_full_chain_info(chain: Path) -> None:
         {blue('Numbered representation:')} {numbered_representation(chain)}
         {blue('Generational difference:')} {generational_difference(chain)}
         {blue('Distance:')} {distance(chain)}
+        {blue('Relatedness:')} {(100 * relatedness(p1, p2)):.2f}
         {blue('Consanguineous decomposition:')} {decompose_and_format(chain, ConsanguineousPart)}
         {blue('Canonical decomposition:')} {decompose_and_format(chain, AnyPart)}
         {blue('Common name 1:')} {common_name(chain, do_compress = True)}
