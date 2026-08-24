@@ -4,6 +4,7 @@ from sys import argv
 from collections import deque
 from helpers.ansi_codes import green, blue, red, yellow
 from abc import ABC, abstractmethod
+from functools import cache
 
 INPUT_FILE: Final[str] = "files/input.md"
 COMMON_NAMES_FILE: Final[str] = "files/common_names.txt"
@@ -126,6 +127,7 @@ class Person:
                 sibling.add_relative("parent", mother_name)
         assert len(self.parents) == 2
 
+    @cache
     def is_descendant_of(self, candidate_ancestor: Person) -> bool:
         if self.is_founder:
             return False
@@ -543,6 +545,7 @@ def decompose_and_naturalize(chain: Path, part_type: type[Part]) -> str:
 
 # ----------------------------------------------------------
 
+@cache
 def relatedness(p1: Person, p2: Person) -> float:
     if p1 is p2: # base case 1
         return 1 if p1.is_founder else 1 + 0.5 * relatedness(p1.parents[0], p1.parents[1])
