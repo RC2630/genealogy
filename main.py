@@ -27,13 +27,16 @@ type Path = list[tuple[str, str]]
 
 class Person:
 
-    def __init__(self, name: str, gender: str) -> None:
+    FOUNDER_COUNTER: int = 1
+
+    def __init__(self, name: str, gender: str, is_founder: bool = False) -> None:
         self.name: str = name
         self.gender: str = gender
         self.siblings: list[Person] = []
         self.parents: list[Person] = []
         self.children: list[Person] = []
         self.spouse: Person | None = None
+        self.is_founder: bool = is_founder
 
     def add_relative(self, type: str, name: str) -> None:
         if type == "child":
@@ -66,6 +69,16 @@ class Person:
             - {blue('spouse:')} {green(self.spouse.name) if self.spouse else red('(N/A)')}
             - {blue('children:')} {display_people_list(self.children)}"""
         )
+        
+    def display_without_founders(self) -> str:
+        named_parents: list[Person] = [parent for parent in self.parents if not parent.is_founder]
+        return remove_leading_whitespaces(
+            f"""{green(self.name)} ({blue(self.gender)}, gen {blue(str(self.get_gen()))})
+            - {blue('parents:')} {display_people_list(named_parents)}
+            - {blue('siblings:')} {display_people_list(self.siblings)}
+            - {blue('spouse:')} {green(self.spouse.name) if self.spouse else red('(N/A)')}
+            - {blue('children:')} {display_people_list(self.children)}"""
+        )
     
     def find(self, other: Person) -> Path | None:
         frontier: deque[tuple[Person, Path]] = deque([(self, [])])
@@ -92,6 +105,27 @@ class Person:
                     already_appended.add(sibling.name)
         return None
 
+    def add_founders(self) -> None:
+        has_father: bool = any(parent.gender == "M" for parent in self.parents)
+        has_mother: bool = any(parent.gender == "F" for parent in self.parents)
+        if not has_father:
+            father_name: str = f"Founder #{Person.FOUNDER_COUNTER}"
+            Person.FOUNDER_COUNTER += 1
+            father = Person(father_name, "M", is_founder = True)
+            PEOPLE[father_name] = father
+            self.add_relative("parent", father_name)
+            for sibling in self.siblings:
+                sibling.add_relative("parent", father_name)
+        if not has_mother:
+            mother_name: str = f"Founder #{Person.FOUNDER_COUNTER}"
+            Person.FOUNDER_COUNTER += 1
+            mother = Person(mother_name, "F", is_founder = True)
+            PEOPLE[mother_name] = mother
+            self.add_relative("parent", mother_name)
+            for sibling in self.siblings:
+                sibling.add_relative("parent", mother_name)
+        assert len(self.parents) == 2
+
 # ----------------------------------------------------------
 
 def parse_input_file() -> None:
@@ -116,6 +150,10 @@ def parse_input_file() -> None:
                 current_person.add_relative(type = m.group(1), name = m.group(2))
             else:
                 raise ValueError("relative entry: format error")
+
+    for person in list(PEOPLE.values()):
+        assert not person.is_founder
+        person.add_founders()
 
 # ----------------------------------------------------------
 
@@ -143,9 +181,14 @@ def reverse_path(path: Path, start: str) -> Path:
     names: list[str] = [name for rel, name in reversed(path)][1:] + [start]
     return list(zip(relationships, names))
 
-def display_all() -> None:
-    for person in PEOPLE.values():
-        print(f"\n{person}")
+def display_all(include_founders: bool) -> None:
+    if include_founders:
+        for person in PEOPLE.values():
+            print(f"\n{person}")
+    else:
+        for person in PEOPLE.values():
+            if not person.is_founder:
+                print(f"\n{person.display_without_founders()}")
 
 def find_person_from_dict(key: str) -> Person:
     try:
@@ -516,6 +559,7 @@ def run_program() -> None:
         print("\nUSAGE: `python main.py <OPTION>`\n"
               "\nOPTIONS:"
               "\nd: display all people and their immediate relationships"
+              "\ndf: display all people and their immediate relationships, including founders"
               "\nf: find the chain of relationships between two people")
         return
 
@@ -524,7 +568,9 @@ def run_program() -> None:
     option: str = argv[1]
 
     if option == "d":
-        display_all()
+        display_all(include_founders = False)
+    elif option == "df":
+        display_all(include_founders = True)
     elif option == "f":
         find_chain()
     else:
