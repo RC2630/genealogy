@@ -161,9 +161,59 @@ def parse_input_file() -> None:
             else:
                 raise ValueError("relative entry: format error")
 
+    autofill_siblings_and_parents()
+
     for person in list(PEOPLE.values()):
         assert not person.is_founder
         person.add_founders()
+
+# ----------------------------------------------------------
+
+def autofill_siblings_and_parents() -> None:
+    changed: bool = autofill_one_round()
+    while changed:
+        changed = autofill_one_round()
+
+def autofill_one_round() -> bool:
+    ss: bool = autofill_siblings_from_siblings()
+    ps: bool = autofill_parents_from_siblings()
+    sp: bool = autofill_siblings_from_parents()
+    return ss or ps or sp
+
+def autofill_siblings_from_siblings() -> bool:
+    changed: bool = False
+    for person in PEOPLE.values():
+        for sibling in person.siblings:
+            for my_sibling in person.siblings:
+                if my_sibling is not sibling and my_sibling not in sibling.siblings:
+                    sibling.add_relative("sibling", my_sibling.name)
+                    changed = True
+    return changed
+
+def autofill_parents_from_siblings() -> bool:
+    changed: bool = False
+    for person in PEOPLE.values():
+        for sibling in person.siblings:
+            for my_parent in person.parents:
+                if my_parent not in sibling.parents:
+                    sibling.add_relative("parent", my_parent.name)
+                    changed = True
+    return changed
+
+def autofill_siblings_from_parents() -> bool:
+    changed: bool = False
+    for person in PEOPLE.values():
+        if len(person.parents) != 2:
+            continue
+        candidate_siblings: list[Person] = [
+            candidate for candidate in PEOPLE.values()
+            if candidate is not person and set(person.parents) == set(candidate.parents)
+        ]
+        for sibling in candidate_siblings:
+            if sibling not in person.siblings:
+                person.add_relative("sibling", sibling.name)
+                changed = True
+    return changed
 
 # ----------------------------------------------------------
 
