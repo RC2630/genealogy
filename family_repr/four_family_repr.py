@@ -1,4 +1,4 @@
-from typing import Literal, override, cast, Any, Callable, Self, Never
+from typing import Literal, override, cast, Any, Callable, Self
 from abc import ABC, abstractmethod
 from collections.abc import Sequence
 from collections import deque
@@ -9,15 +9,18 @@ type NumberedReprType = tuple[()] | tuple[int] | tuple[int, int]
 type CoordinateType = tuple[int, int]
 type ConversionFunction = Callable[[Any], Representation]
 
-NEIGHBOURS: dict[type[Representation], Callable[[], set[type[Representation]]]] = {}
+CONVERSIONS: dict[
+    type[Representation],
+    Callable[[], dict[type[Representation], ConversionFunction]]
+] = {}
 
 # ----------------------------------------------
 
-def register_neighbours[T: Representation](
-    neighbours: Callable[[], set[type[Representation]]]
+def register_conversions[T: Representation](
+    conversions: Callable[[], dict[type[Representation], ConversionFunction]]
 ) -> Callable[[type[T]], type[T]]:
     def decorator(repr_type: type[T]) -> type[T]:
-        NEIGHBOURS[repr_type] = neighbours
+        CONVERSIONS[repr_type] = conversions
         return repr_type
     return decorator
 
@@ -38,10 +41,6 @@ class Representation(ABC):
     def generate(cls, max: int) -> Sequence[Self]:
         ...
 
-    @abstractmethod
-    def to_neighbour[T: Representation](self, neighbour_type: type[T]) -> T:
-        ...
-
     def find_path(self, destination: type[Representation]) -> list[type[Representation]]:
         frontier: deque[list[type[Representation]]] = deque([[type(self)]])
         visited: set[type[Representation]] = {type(self)}
@@ -50,7 +49,7 @@ class Representation(ABC):
             curr_type: type[Representation] = curr_path[-1]
             if curr_type is destination:
                 return curr_path[1:]
-            for neighbour_type in NEIGHBOURS[curr_type]():
+            for neighbour_type in CONVERSIONS[curr_type]():
                 if neighbour_type not in visited:
                     visited.add(neighbour_type)
                     frontier.append(curr_path + [neighbour_type])
@@ -59,33 +58,32 @@ class Representation(ABC):
     def to[T: Representation](self, repr_type: type[T]) -> T:
         curr: Representation = self
         for neighbour_type in self.find_path(repr_type):
-            curr = curr.to_neighbour(neighbour_type)
+            conversion_func: ConversionFunction = CONVERSIONS[type(curr)]()[neighbour_type]
+            curr = conversion_func(curr)
         return cast(T, curr)
 
     def display(self) -> None:
         print()
-        for repr_type in NEIGHBOURS:
+        for repr_type in CONVERSIONS:
             print(f"{repr_type.__name__}: {self.to(repr_type)}")
 
     def test(self) -> None:
-        for repr_type in NEIGHBOURS:
+        for repr_type in CONVERSIONS:
             assert self.to(repr_type).to(type(self)) == self
 
     @staticmethod
     def generate_all(max: int) -> list[Representation]:
         representations: list[Representation] = []
-        for repr_type in NEIGHBOURS:
+        for repr_type in CONVERSIONS:
             representations.extend(repr_type.generate(max))
         return representations
 
-    def raise_not_neighbour(self, not_neighbour_type: type[Representation]) -> Never:
-        raise ValueError(
-            f"{not_neighbour_type.__name__} is not a neighbour of {type(self).__name__}"
-        )
-
 # ----------------------------------------------
 
-@register_neighbours(lambda: {NumberedRepresentation})
+@register_conversions(lambda: {
+    NumberedRepresentation:
+        Path.to_numbered_representation
+})
 class Path(Representation):
 
     def __init__(self, path: PathType) -> None:
@@ -118,13 +116,6 @@ class Path(Representation):
                     generated.add(tuple(path_2))
         return result
 
-    @override
-    def to_neighbour[T: Representation](self, neighbour_type: type[T]) -> T:
-        if neighbour_type is NumberedRepresentation:
-            return cast(T, self.to_numbered_representation())
-        else:
-            self.raise_not_neighbour(neighbour_type)
-
     def to_numbered_representation(self) -> NumberedRepresentation:
         repr: list[int] = []
         for edge_type, group in groupby(self.path):
@@ -138,7 +129,12 @@ class Path(Representation):
 
 # ----------------------------------------------
 
-@register_neighbours(lambda: {Path, GenerationsToSharedPointCoordinates})
+@register_conversions(lambda: {
+    Path:
+        NumberedRepresentation.to_path,
+    GenerationsToSharedPointCoordinates:
+        NumberedRepresentation.to_generations_to_shared_point_coordinates
+})
 class NumberedRepresentation(Representation):
 
     def __init__(self, repr: NumberedReprType) -> None:
@@ -167,15 +163,6 @@ class NumberedRepresentation(Representation):
                 result.append(cls((-i, j)))
         return result
 
-    @override
-    def to_neighbour[T: Representation](self, neighbour_type: type[T]) -> T:
-        if neighbour_type is Path:
-            return cast(T, self.to_path())
-        elif neighbour_type is GenerationsToSharedPointCoordinates:
-            return cast(T, self.to_generations_to_shared_point_coordinates())
-        else:
-            self.raise_not_neighbour(neighbour_type)
-
     def to_path(self) -> Path:
         path: list[str] = []
         for n in self.repr:
@@ -197,7 +184,12 @@ class NumberedRepresentation(Representation):
 
 # ----------------------------------------------
 
-@register_neighbours(lambda: {NumberedRepresentation, ExtendedCousinCoordinates})
+@register_conversions(lambda: {
+    NumberedRepresentation:
+        GenerationsToSharedPointCoordinates.to_numbered_representation,
+    ExtendedCousinCoordinates:
+        GenerationsToSharedPointCoordinates.to_extended_cousin_coordinates
+})
 class GenerationsToSharedPointCoordinates(Representation):
 
     def __init__(self, coordinates: CoordinateType) -> None:
@@ -224,15 +216,6 @@ class GenerationsToSharedPointCoordinates(Representation):
                     result.append(cls((-i, -j)))
         return result
 
-    @override
-    def to_neighbour[T: Representation](self, neighbour_type: type[T]) -> T:
-        if neighbour_type is NumberedRepresentation:
-            return cast(T, self.to_numbered_representation())
-        elif neighbour_type is ExtendedCousinCoordinates:
-            return cast(T, self.to_extended_cousin_coordinates())
-        else:
-            self.raise_not_neighbour(neighbour_type)
-
     def to_numbered_representation(self) -> NumberedRepresentation:
         a, b = self.coordinates
         if (a, b) == (0, 0):
@@ -253,7 +236,10 @@ class GenerationsToSharedPointCoordinates(Representation):
 
 # ----------------------------------------------
 
-@register_neighbours(lambda: {GenerationsToSharedPointCoordinates})
+@register_conversions(lambda: {
+    GenerationsToSharedPointCoordinates:
+        ExtendedCousinCoordinates.to_generations_to_shared_point_coordinates
+})
 class ExtendedCousinCoordinates(Representation):
 
     def __init__(self, coordinates: CoordinateType) -> None:
@@ -277,13 +263,6 @@ class ExtendedCousinCoordinates(Representation):
             for k in range(-max, max + 1):
                 result.append(cls((n, k)))
         return result
-
-    @override
-    def to_neighbour[T: Representation](self, neighbour_type: type[T]) -> T:
-        if neighbour_type is GenerationsToSharedPointCoordinates:
-            return cast(T, self.to_generations_to_shared_point_coordinates())
-        else:
-            self.raise_not_neighbour(neighbour_type)
 
     def to_generations_to_shared_point_coordinates(self) -> GenerationsToSharedPointCoordinates:
         n, k = self.coordinates
