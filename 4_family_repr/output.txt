@@ -1,0 +1,304 @@
+Path: [] -> self
+Path: [child] -> son, daughter
+Path: [parent] -> father, mother
+Path: [child, child] -> grandson, granddaughter
+Path: [parent, parent] -> grandfather, grandmother
+Path: [child, child, child] -> great-grandson, great-granddaughter
+Path: [parent, parent, parent] -> great-grandfather, great-grandmother
+Path: [child, child, child, child] -> great-great-grandson, great-great-granddaughter
+Path: [parent, parent, parent, parent] -> great-great-grandfather, great-great-grandmother
+Path: [child, child, child, child, child] -> great-great-great-grandson, great-great-great-granddaughter
+Path: [parent, parent, parent, parent, parent] -> great-great-great-grandfather, great-great-great-grandmother
+Path: [parent, child] -> brother, sister
+Path: [child, parent] -> son's father, daughter's father, son's mother, daughter's mother
+Path: [parent, child, child] -> nephew, niece
+Path: [child, parent, parent] -> son's grandfather, daughter's grandfather, son's grandmother, daughter's grandmother
+Path: [parent, child, child, child] -> grandnephew, grandniece
+Path: [child, parent, parent, parent] -> son's great-grandfather, daughter's great-grandfather, son's great-grandmother, daughter's great-grandmother
+Path: [parent, child, child, child, child] -> great-grandnephew, great-grandniece
+Path: [child, parent, parent, parent, parent] -> son's great-great-grandfather, daughter's great-great-grandfather, son's great-great-grandmother, daughter's great-great-grandmother
+Path: [parent, child, child, child, child, child] -> great-great-grandnephew, great-great-grandniece
+Path: [child, parent, parent, parent, parent, parent] -> son's great-great-great-grandfather, daughter's great-great-great-grandfather, son's great-great-great-grandmother, daughter's great-great-great-grandmother
+Path: [parent, parent, child] -> uncle, aunt
+Path: [child, child, parent] -> grandson's father, granddaughter's father, grandson's mother, granddaughter's mother
+Path: [parent, parent, child, child] -> 1st cousin
+Path: [child, child, parent, parent] -> grandson's grandfather, granddaughter's grandfather, grandson's grandmother, granddaughter's grandmother
+Path: [parent, parent, child, child, child] -> 1st cousin once removed
+Path: [child, child, parent, parent, parent] -> grandson's great-grandfather, granddaughter's great-grandfather, grandson's great-grandmother, granddaughter's great-grandmother
+Path: [parent, parent, child, child, child, child] -> 1st cousin twice removed
+Path: [child, child, parent, parent, parent, parent] -> grandson's great-great-grandfather, granddaughter's great-great-grandfather, grandson's great-great-grandmother, granddaughter's great-great-grandmother
+Path: [parent, parent, child, child, child, child, child] -> 1st cousin thrice removed
+Path: [child, child, parent, parent, parent, parent, parent] -> grandson's great-great-great-grandfather, granddaughter's great-great-great-grandfather, grandson's great-great-great-grandmother, granddaughter's great-great-great-grandmother
+Path: [parent, parent, parent, child] -> great-uncle, great-aunt
+Path: [child, child, child, parent] -> great-grandson's father, great-granddaughter's father, great-grandson's mother, great-granddaughter's mother
+Path: [parent, parent, parent, child, child] -> 1st cousin once removed
+Path: [child, child, child, parent, parent] -> great-grandson's grandfather, great-granddaughter's grandfather, great-grandson's grandmother, great-granddaughter's grandmother
+Path: [parent, parent, parent, child, child, child] -> 2nd cousin
+Path: [child, child, child, parent, parent, parent] -> great-grandson's great-grandfather, great-granddaughter's great-grandfather, great-grandson's great-grandmother, great-granddaughter's great-grandmother
+Path: [parent, parent, parent, child, child, child, child] -> 2nd cousin once removed
+Path: [child, child, child, parent, parent, parent, parent] -> great-grandson's great-great-grandfather, great-granddaughter's great-great-grandfather, great-grandson's great-great-grandmother, great-granddaughter's great-great-grandmother
+Path: [parent, parent, parent, child, child, child, child, child] -> 2nd cousin twice removed
+Path: [child, child, child, parent, parent, parent, parent, parent] -> great-grandson's great-great-great-grandfather, great-granddaughter's great-great-great-grandfather, great-grandson's great-great-great-grandmother, great-granddaughter's great-great-great-grandmother
+Path: [parent, parent, parent, parent, child] -> great-granduncle, great-grandaunt
+Path: [child, child, child, child, parent] -> great-great-grandson's father, great-great-granddaughter's father, great-great-grandson's mother, great-great-granddaughter's mother
+Path: [parent, parent, parent, parent, child, child] -> 1st cousin twice removed
+Path: [child, child, child, child, parent, parent] -> great-great-grandson's grandfather, great-great-granddaughter's grandfather, great-great-grandson's grandmother, great-great-granddaughter's grandmother
+Path: [parent, parent, parent, parent, child, child, child] -> 2nd cousin once removed
+Path: [child, child, child, child, parent, parent, parent] -> great-great-grandson's great-grandfather, great-great-granddaughter's great-grandfather, great-great-grandson's great-grandmother, great-great-granddaughter's great-grandmother
+Path: [parent, parent, parent, parent, child, child, child, child] -> 3rd cousin
+Path: [child, child, child, child, parent, parent, parent, parent] -> great-great-grandson's great-great-grandfather, great-great-granddaughter's great-great-grandfather, great-great-grandson's great-great-grandmother, great-great-granddaughter's great-great-grandmother
+Path: [parent, parent, parent, parent, child, child, child, child, child] -> 3rd cousin once removed
+Path: [child, child, child, child, parent, parent, parent, parent, parent] -> great-great-grandson's great-great-great-grandfather, great-great-granddaughter's great-great-great-grandfather, great-great-grandson's great-great-great-grandmother, great-great-granddaughter's great-great-great-grandmother
+Path: [parent, parent, parent, parent, parent, child] -> great-great-granduncle, great-great-grandaunt
+Path: [child, child, child, child, child, parent] -> great-great-great-grandson's father, great-great-great-granddaughter's father, great-great-great-grandson's mother, great-great-great-granddaughter's mother
+Path: [parent, parent, parent, parent, parent, child, child] -> 1st cousin thrice removed
+Path: [child, child, child, child, child, parent, parent] -> great-great-great-grandson's grandfather, great-great-great-granddaughter's grandfather, great-great-great-grandson's grandmother, great-great-great-granddaughter's grandmother
+Path: [parent, parent, parent, parent, parent, child, child, child] -> 2nd cousin twice removed
+Path: [child, child, child, child, child, parent, parent, parent] -> great-great-great-grandson's great-grandfather, great-great-great-granddaughter's great-grandfather, great-great-great-grandson's great-grandmother, great-great-great-granddaughter's great-grandmother
+Path: [parent, parent, parent, parent, parent, child, child, child, child] -> 3rd cousin once removed
+Path: [child, child, child, child, child, parent, parent, parent, parent] -> great-great-great-grandson's great-great-grandfather, great-great-great-granddaughter's great-great-grandfather, great-great-great-grandson's great-great-grandmother, great-great-great-granddaughter's great-great-grandmother
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child] -> 4th cousin
+Path: [child, child, child, child, child, parent, parent, parent, parent, parent] -> great-great-great-grandson's great-great-great-grandfather, great-great-great-granddaughter's great-great-great-grandfather, great-great-great-grandson's great-great-great-grandmother, great-great-great-granddaughter's great-great-great-grandmother
+NumberedRepresentation: () -> self
+NumberedRepresentation: (-5) -> great-great-great-grandson, great-great-great-granddaughter
+NumberedRepresentation: (-4) -> great-great-grandson, great-great-granddaughter
+NumberedRepresentation: (-3) -> great-grandson, great-granddaughter
+NumberedRepresentation: (-2) -> grandson, granddaughter
+NumberedRepresentation: (-1) -> son, daughter
+NumberedRepresentation: (1) -> father, mother
+NumberedRepresentation: (2) -> grandfather, grandmother
+NumberedRepresentation: (3) -> great-grandfather, great-grandmother
+NumberedRepresentation: (4) -> great-great-grandfather, great-great-grandmother
+NumberedRepresentation: (5) -> great-great-great-grandfather, great-great-great-grandmother
+NumberedRepresentation: (1, -1) -> brother, sister
+NumberedRepresentation: (-1, 1) -> son's father, daughter's father, son's mother, daughter's mother
+NumberedRepresentation: (1, -2) -> nephew, niece
+NumberedRepresentation: (-1, 2) -> son's grandfather, daughter's grandfather, son's grandmother, daughter's grandmother
+NumberedRepresentation: (1, -3) -> grandnephew, grandniece
+NumberedRepresentation: (-1, 3) -> son's great-grandfather, daughter's great-grandfather, son's great-grandmother, daughter's great-grandmother
+NumberedRepresentation: (1, -4) -> great-grandnephew, great-grandniece
+NumberedRepresentation: (-1, 4) -> son's great-great-grandfather, daughter's great-great-grandfather, son's great-great-grandmother, daughter's great-great-grandmother
+NumberedRepresentation: (1, -5) -> great-great-grandnephew, great-great-grandniece
+NumberedRepresentation: (-1, 5) -> son's great-great-great-grandfather, daughter's great-great-great-grandfather, son's great-great-great-grandmother, daughter's great-great-great-grandmother
+NumberedRepresentation: (2, -1) -> uncle, aunt
+NumberedRepresentation: (-2, 1) -> grandson's father, granddaughter's father, grandson's mother, granddaughter's mother
+NumberedRepresentation: (2, -2) -> 1st cousin
+NumberedRepresentation: (-2, 2) -> grandson's grandfather, granddaughter's grandfather, grandson's grandmother, granddaughter's grandmother
+NumberedRepresentation: (2, -3) -> 1st cousin once removed
+NumberedRepresentation: (-2, 3) -> grandson's great-grandfather, granddaughter's great-grandfather, grandson's great-grandmother, granddaughter's great-grandmother
+NumberedRepresentation: (2, -4) -> 1st cousin twice removed
+NumberedRepresentation: (-2, 4) -> grandson's great-great-grandfather, granddaughter's great-great-grandfather, grandson's great-great-grandmother, granddaughter's great-great-grandmother
+NumberedRepresentation: (2, -5) -> 1st cousin thrice removed
+NumberedRepresentation: (-2, 5) -> grandson's great-great-great-grandfather, granddaughter's great-great-great-grandfather, grandson's great-great-great-grandmother, granddaughter's great-great-great-grandmother
+NumberedRepresentation: (3, -1) -> great-uncle, great-aunt
+NumberedRepresentation: (-3, 1) -> great-grandson's father, great-granddaughter's father, great-grandson's mother, great-granddaughter's mother
+NumberedRepresentation: (3, -2) -> 1st cousin once removed
+NumberedRepresentation: (-3, 2) -> great-grandson's grandfather, great-granddaughter's grandfather, great-grandson's grandmother, great-granddaughter's grandmother
+NumberedRepresentation: (3, -3) -> 2nd cousin
+NumberedRepresentation: (-3, 3) -> great-grandson's great-grandfather, great-granddaughter's great-grandfather, great-grandson's great-grandmother, great-granddaughter's great-grandmother
+NumberedRepresentation: (3, -4) -> 2nd cousin once removed
+NumberedRepresentation: (-3, 4) -> great-grandson's great-great-grandfather, great-granddaughter's great-great-grandfather, great-grandson's great-great-grandmother, great-granddaughter's great-great-grandmother
+NumberedRepresentation: (3, -5) -> 2nd cousin twice removed
+NumberedRepresentation: (-3, 5) -> great-grandson's great-great-great-grandfather, great-granddaughter's great-great-great-grandfather, great-grandson's great-great-great-grandmother, great-granddaughter's great-great-great-grandmother
+NumberedRepresentation: (4, -1) -> great-granduncle, great-grandaunt
+NumberedRepresentation: (-4, 1) -> great-great-grandson's father, great-great-granddaughter's father, great-great-grandson's mother, great-great-granddaughter's mother
+NumberedRepresentation: (4, -2) -> 1st cousin twice removed
+NumberedRepresentation: (-4, 2) -> great-great-grandson's grandfather, great-great-granddaughter's grandfather, great-great-grandson's grandmother, great-great-granddaughter's grandmother
+NumberedRepresentation: (4, -3) -> 2nd cousin once removed
+NumberedRepresentation: (-4, 3) -> great-great-grandson's great-grandfather, great-great-granddaughter's great-grandfather, great-great-grandson's great-grandmother, great-great-granddaughter's great-grandmother
+NumberedRepresentation: (4, -4) -> 3rd cousin
+NumberedRepresentation: (-4, 4) -> great-great-grandson's great-great-grandfather, great-great-granddaughter's great-great-grandfather, great-great-grandson's great-great-grandmother, great-great-granddaughter's great-great-grandmother
+NumberedRepresentation: (4, -5) -> 3rd cousin once removed
+NumberedRepresentation: (-4, 5) -> great-great-grandson's great-great-great-grandfather, great-great-granddaughter's great-great-great-grandfather, great-great-grandson's great-great-great-grandmother, great-great-granddaughter's great-great-great-grandmother
+NumberedRepresentation: (5, -1) -> great-great-granduncle, great-great-grandaunt
+NumberedRepresentation: (-5, 1) -> great-great-great-grandson's father, great-great-great-granddaughter's father, great-great-great-grandson's mother, great-great-great-granddaughter's mother
+NumberedRepresentation: (5, -2) -> 1st cousin thrice removed
+NumberedRepresentation: (-5, 2) -> great-great-great-grandson's grandfather, great-great-great-granddaughter's grandfather, great-great-great-grandson's grandmother, great-great-great-granddaughter's grandmother
+NumberedRepresentation: (5, -3) -> 2nd cousin twice removed
+NumberedRepresentation: (-5, 3) -> great-great-great-grandson's great-grandfather, great-great-great-granddaughter's great-grandfather, great-great-great-grandson's great-grandmother, great-great-great-granddaughter's great-grandmother
+NumberedRepresentation: (5, -4) -> 3rd cousin once removed
+NumberedRepresentation: (-5, 4) -> great-great-great-grandson's great-great-grandfather, great-great-great-granddaughter's great-great-grandfather, great-great-great-grandson's great-great-grandmother, great-great-great-granddaughter's great-great-grandmother
+NumberedRepresentation: (5, -5) -> 4th cousin
+NumberedRepresentation: (-5, 5) -> great-great-great-grandson's great-great-great-grandfather, great-great-great-granddaughter's great-great-great-grandfather, great-great-great-grandson's great-great-great-grandmother, great-great-great-granddaughter's great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (0, 0) -> self
+GenerationsToSharedPointCoordinates: (0, 1) -> son, daughter
+GenerationsToSharedPointCoordinates: (0, 2) -> grandson, granddaughter
+GenerationsToSharedPointCoordinates: (0, 3) -> great-grandson, great-granddaughter
+GenerationsToSharedPointCoordinates: (0, 4) -> great-great-grandson, great-great-granddaughter
+GenerationsToSharedPointCoordinates: (0, 5) -> great-great-great-grandson, great-great-great-granddaughter
+GenerationsToSharedPointCoordinates: (1, 0) -> father, mother
+GenerationsToSharedPointCoordinates: (1, 1) -> brother, sister
+GenerationsToSharedPointCoordinates: (-1, -1) -> son's father, daughter's father, son's mother, daughter's mother
+GenerationsToSharedPointCoordinates: (1, 2) -> nephew, niece
+GenerationsToSharedPointCoordinates: (-1, -2) -> son's grandfather, daughter's grandfather, son's grandmother, daughter's grandmother
+GenerationsToSharedPointCoordinates: (1, 3) -> grandnephew, grandniece
+GenerationsToSharedPointCoordinates: (-1, -3) -> son's great-grandfather, daughter's great-grandfather, son's great-grandmother, daughter's great-grandmother
+GenerationsToSharedPointCoordinates: (1, 4) -> great-grandnephew, great-grandniece
+GenerationsToSharedPointCoordinates: (-1, -4) -> son's great-great-grandfather, daughter's great-great-grandfather, son's great-great-grandmother, daughter's great-great-grandmother
+GenerationsToSharedPointCoordinates: (1, 5) -> great-great-grandnephew, great-great-grandniece
+GenerationsToSharedPointCoordinates: (-1, -5) -> son's great-great-great-grandfather, daughter's great-great-great-grandfather, son's great-great-great-grandmother, daughter's great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (2, 0) -> grandfather, grandmother
+GenerationsToSharedPointCoordinates: (2, 1) -> uncle, aunt
+GenerationsToSharedPointCoordinates: (-2, -1) -> grandson's father, granddaughter's father, grandson's mother, granddaughter's mother
+GenerationsToSharedPointCoordinates: (2, 2) -> 1st cousin
+GenerationsToSharedPointCoordinates: (-2, -2) -> grandson's grandfather, granddaughter's grandfather, grandson's grandmother, granddaughter's grandmother
+GenerationsToSharedPointCoordinates: (2, 3) -> 1st cousin once removed
+GenerationsToSharedPointCoordinates: (-2, -3) -> grandson's great-grandfather, granddaughter's great-grandfather, grandson's great-grandmother, granddaughter's great-grandmother
+GenerationsToSharedPointCoordinates: (2, 4) -> 1st cousin twice removed
+GenerationsToSharedPointCoordinates: (-2, -4) -> grandson's great-great-grandfather, granddaughter's great-great-grandfather, grandson's great-great-grandmother, granddaughter's great-great-grandmother
+GenerationsToSharedPointCoordinates: (2, 5) -> 1st cousin thrice removed
+GenerationsToSharedPointCoordinates: (-2, -5) -> grandson's great-great-great-grandfather, granddaughter's great-great-great-grandfather, grandson's great-great-great-grandmother, granddaughter's great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (3, 0) -> great-grandfather, great-grandmother
+GenerationsToSharedPointCoordinates: (3, 1) -> great-uncle, great-aunt
+GenerationsToSharedPointCoordinates: (-3, -1) -> great-grandson's father, great-granddaughter's father, great-grandson's mother, great-granddaughter's mother
+GenerationsToSharedPointCoordinates: (3, 2) -> 1st cousin once removed
+GenerationsToSharedPointCoordinates: (-3, -2) -> great-grandson's grandfather, great-granddaughter's grandfather, great-grandson's grandmother, great-granddaughter's grandmother
+GenerationsToSharedPointCoordinates: (3, 3) -> 2nd cousin
+GenerationsToSharedPointCoordinates: (-3, -3) -> great-grandson's great-grandfather, great-granddaughter's great-grandfather, great-grandson's great-grandmother, great-granddaughter's great-grandmother
+GenerationsToSharedPointCoordinates: (3, 4) -> 2nd cousin once removed
+GenerationsToSharedPointCoordinates: (-3, -4) -> great-grandson's great-great-grandfather, great-granddaughter's great-great-grandfather, great-grandson's great-great-grandmother, great-granddaughter's great-great-grandmother
+GenerationsToSharedPointCoordinates: (3, 5) -> 2nd cousin twice removed
+GenerationsToSharedPointCoordinates: (-3, -5) -> great-grandson's great-great-great-grandfather, great-granddaughter's great-great-great-grandfather, great-grandson's great-great-great-grandmother, great-granddaughter's great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (4, 0) -> great-great-grandfather, great-great-grandmother
+GenerationsToSharedPointCoordinates: (4, 1) -> great-granduncle, great-grandaunt
+GenerationsToSharedPointCoordinates: (-4, -1) -> great-great-grandson's father, great-great-granddaughter's father, great-great-grandson's mother, great-great-granddaughter's mother
+GenerationsToSharedPointCoordinates: (4, 2) -> 1st cousin twice removed
+GenerationsToSharedPointCoordinates: (-4, -2) -> great-great-grandson's grandfather, great-great-granddaughter's grandfather, great-great-grandson's grandmother, great-great-granddaughter's grandmother
+GenerationsToSharedPointCoordinates: (4, 3) -> 2nd cousin once removed
+GenerationsToSharedPointCoordinates: (-4, -3) -> great-great-grandson's great-grandfather, great-great-granddaughter's great-grandfather, great-great-grandson's great-grandmother, great-great-granddaughter's great-grandmother
+GenerationsToSharedPointCoordinates: (4, 4) -> 3rd cousin
+GenerationsToSharedPointCoordinates: (-4, -4) -> great-great-grandson's great-great-grandfather, great-great-granddaughter's great-great-grandfather, great-great-grandson's great-great-grandmother, great-great-granddaughter's great-great-grandmother
+GenerationsToSharedPointCoordinates: (4, 5) -> 3rd cousin once removed
+GenerationsToSharedPointCoordinates: (-4, -5) -> great-great-grandson's great-great-great-grandfather, great-great-granddaughter's great-great-great-grandfather, great-great-grandson's great-great-great-grandmother, great-great-granddaughter's great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (5, 0) -> great-great-great-grandfather, great-great-great-grandmother
+GenerationsToSharedPointCoordinates: (5, 1) -> great-great-granduncle, great-great-grandaunt
+GenerationsToSharedPointCoordinates: (-5, -1) -> great-great-great-grandson's father, great-great-great-granddaughter's father, great-great-great-grandson's mother, great-great-great-granddaughter's mother
+GenerationsToSharedPointCoordinates: (5, 2) -> 1st cousin thrice removed
+GenerationsToSharedPointCoordinates: (-5, -2) -> great-great-great-grandson's grandfather, great-great-great-granddaughter's grandfather, great-great-great-grandson's grandmother, great-great-great-granddaughter's grandmother
+GenerationsToSharedPointCoordinates: (5, 3) -> 2nd cousin twice removed
+GenerationsToSharedPointCoordinates: (-5, -3) -> great-great-great-grandson's great-grandfather, great-great-great-granddaughter's great-grandfather, great-great-great-grandson's great-grandmother, great-great-great-granddaughter's great-grandmother
+GenerationsToSharedPointCoordinates: (5, 4) -> 3rd cousin once removed
+GenerationsToSharedPointCoordinates: (-5, -4) -> great-great-great-grandson's great-great-grandfather, great-great-great-granddaughter's great-great-grandfather, great-great-great-grandson's great-great-grandmother, great-great-great-granddaughter's great-great-grandmother
+GenerationsToSharedPointCoordinates: (5, 5) -> 4th cousin
+GenerationsToSharedPointCoordinates: (-5, -5) -> great-great-great-grandson's great-great-great-grandfather, great-great-great-granddaughter's great-great-great-grandfather, great-great-great-grandson's great-great-great-grandmother, great-great-great-granddaughter's great-great-great-grandmother
+ExtendedCousinCoordinates: (-5, -5) -> great-great-great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, -4) -> great-great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, -3) -> great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, -2) -> great-great-great-great-grandson's great-great-grandfather, great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-grandson's great-great-grandmother, great-great-great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, -1) -> great-great-great-grandson's great-great-grandfather, great-great-great-granddaughter's great-great-grandfather, great-great-great-grandson's great-great-grandmother, great-great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, 0) -> great-great-grandson's great-great-grandfather, great-great-granddaughter's great-great-grandfather, great-great-grandson's great-great-grandmother, great-great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-5, 1) -> great-great-grandson's great-great-great-grandfather, great-great-granddaughter's great-great-great-grandfather, great-great-grandson's great-great-great-grandmother, great-great-granddaughter's great-great-great-grandmother
+ExtendedCousinCoordinates: (-5, 2) -> great-great-grandson's great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-grandfather, great-great-grandson's great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-5, 3) -> great-great-grandson's great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-5, 4) -> great-great-grandson's great-great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-5, 5) -> great-great-grandson's great-great-great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-4, -5) -> great-great-great-great-great-great-grandson's great-grandfather, great-great-great-great-great-great-granddaughter's great-grandfather, great-great-great-great-great-great-grandson's great-grandmother, great-great-great-great-great-great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, -4) -> great-great-great-great-great-grandson's great-grandfather, great-great-great-great-great-granddaughter's great-grandfather, great-great-great-great-great-grandson's great-grandmother, great-great-great-great-great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, -3) -> great-great-great-great-grandson's great-grandfather, great-great-great-great-granddaughter's great-grandfather, great-great-great-great-grandson's great-grandmother, great-great-great-great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, -2) -> great-great-great-grandson's great-grandfather, great-great-great-granddaughter's great-grandfather, great-great-great-grandson's great-grandmother, great-great-great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, -1) -> great-great-grandson's great-grandfather, great-great-granddaughter's great-grandfather, great-great-grandson's great-grandmother, great-great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, 0) -> great-grandson's great-grandfather, great-granddaughter's great-grandfather, great-grandson's great-grandmother, great-granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-4, 1) -> great-grandson's great-great-grandfather, great-granddaughter's great-great-grandfather, great-grandson's great-great-grandmother, great-granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-4, 2) -> great-grandson's great-great-great-grandfather, great-granddaughter's great-great-great-grandfather, great-grandson's great-great-great-grandmother, great-granddaughter's great-great-great-grandmother
+ExtendedCousinCoordinates: (-4, 3) -> great-grandson's great-great-great-great-grandfather, great-granddaughter's great-great-great-great-grandfather, great-grandson's great-great-great-great-grandmother, great-granddaughter's great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-4, 4) -> great-grandson's great-great-great-great-great-grandfather, great-granddaughter's great-great-great-great-great-grandfather, great-grandson's great-great-great-great-great-grandmother, great-granddaughter's great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-4, 5) -> great-grandson's great-great-great-great-great-great-grandfather, great-granddaughter's great-great-great-great-great-great-grandfather, great-grandson's great-great-great-great-great-great-grandmother, great-granddaughter's great-great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-3, -5) -> great-great-great-great-great-grandson's grandfather, great-great-great-great-great-granddaughter's grandfather, great-great-great-great-great-grandson's grandmother, great-great-great-great-great-granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, -4) -> great-great-great-great-grandson's grandfather, great-great-great-great-granddaughter's grandfather, great-great-great-great-grandson's grandmother, great-great-great-great-granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, -3) -> great-great-great-grandson's grandfather, great-great-great-granddaughter's grandfather, great-great-great-grandson's grandmother, great-great-great-granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, -2) -> great-great-grandson's grandfather, great-great-granddaughter's grandfather, great-great-grandson's grandmother, great-great-granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, -1) -> great-grandson's grandfather, great-granddaughter's grandfather, great-grandson's grandmother, great-granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, 0) -> grandson's grandfather, granddaughter's grandfather, grandson's grandmother, granddaughter's grandmother
+ExtendedCousinCoordinates: (-3, 1) -> grandson's great-grandfather, granddaughter's great-grandfather, grandson's great-grandmother, granddaughter's great-grandmother
+ExtendedCousinCoordinates: (-3, 2) -> grandson's great-great-grandfather, granddaughter's great-great-grandfather, grandson's great-great-grandmother, granddaughter's great-great-grandmother
+ExtendedCousinCoordinates: (-3, 3) -> grandson's great-great-great-grandfather, granddaughter's great-great-great-grandfather, grandson's great-great-great-grandmother, granddaughter's great-great-great-grandmother
+ExtendedCousinCoordinates: (-3, 4) -> grandson's great-great-great-great-grandfather, granddaughter's great-great-great-great-grandfather, grandson's great-great-great-great-grandmother, granddaughter's great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-3, 5) -> grandson's great-great-great-great-great-grandfather, granddaughter's great-great-great-great-great-grandfather, grandson's great-great-great-great-great-grandmother, granddaughter's great-great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-2, -5) -> great-great-great-great-grandson's father, great-great-great-great-granddaughter's father, great-great-great-great-grandson's mother, great-great-great-great-granddaughter's mother
+ExtendedCousinCoordinates: (-2, -4) -> great-great-great-grandson's father, great-great-great-granddaughter's father, great-great-great-grandson's mother, great-great-great-granddaughter's mother
+ExtendedCousinCoordinates: (-2, -3) -> great-great-grandson's father, great-great-granddaughter's father, great-great-grandson's mother, great-great-granddaughter's mother
+ExtendedCousinCoordinates: (-2, -2) -> great-grandson's father, great-granddaughter's father, great-grandson's mother, great-granddaughter's mother
+ExtendedCousinCoordinates: (-2, -1) -> grandson's father, granddaughter's father, grandson's mother, granddaughter's mother
+ExtendedCousinCoordinates: (-2, 0) -> son's father, daughter's father, son's mother, daughter's mother
+ExtendedCousinCoordinates: (-2, 1) -> son's grandfather, daughter's grandfather, son's grandmother, daughter's grandmother
+ExtendedCousinCoordinates: (-2, 2) -> son's great-grandfather, daughter's great-grandfather, son's great-grandmother, daughter's great-grandmother
+ExtendedCousinCoordinates: (-2, 3) -> son's great-great-grandfather, daughter's great-great-grandfather, son's great-great-grandmother, daughter's great-great-grandmother
+ExtendedCousinCoordinates: (-2, 4) -> son's great-great-great-grandfather, daughter's great-great-great-grandfather, son's great-great-great-grandmother, daughter's great-great-great-grandmother
+ExtendedCousinCoordinates: (-2, 5) -> son's great-great-great-great-grandfather, daughter's great-great-great-great-grandfather, son's great-great-great-great-grandmother, daughter's great-great-great-great-grandmother
+ExtendedCousinCoordinates: (-1, -5) -> great-great-great-grandson, great-great-great-granddaughter
+ExtendedCousinCoordinates: (-1, -4) -> great-great-grandson, great-great-granddaughter
+ExtendedCousinCoordinates: (-1, -3) -> great-grandson, great-granddaughter
+ExtendedCousinCoordinates: (-1, -2) -> grandson, granddaughter
+ExtendedCousinCoordinates: (-1, -1) -> son, daughter
+ExtendedCousinCoordinates: (-1, 0) -> self
+ExtendedCousinCoordinates: (-1, 1) -> father, mother
+ExtendedCousinCoordinates: (-1, 2) -> grandfather, grandmother
+ExtendedCousinCoordinates: (-1, 3) -> great-grandfather, great-grandmother
+ExtendedCousinCoordinates: (-1, 4) -> great-great-grandfather, great-great-grandmother
+ExtendedCousinCoordinates: (-1, 5) -> great-great-great-grandfather, great-great-great-grandmother
+ExtendedCousinCoordinates: (0, -5) -> great-great-great-grandnephew, great-great-great-grandniece
+ExtendedCousinCoordinates: (0, -4) -> great-great-grandnephew, great-great-grandniece
+ExtendedCousinCoordinates: (0, -3) -> great-grandnephew, great-grandniece
+ExtendedCousinCoordinates: (0, -2) -> grandnephew, grandniece
+ExtendedCousinCoordinates: (0, -1) -> nephew, niece
+ExtendedCousinCoordinates: (0, 0) -> brother, sister
+ExtendedCousinCoordinates: (0, 1) -> uncle, aunt
+ExtendedCousinCoordinates: (0, 2) -> great-uncle, great-aunt
+ExtendedCousinCoordinates: (0, 3) -> great-granduncle, great-grandaunt
+ExtendedCousinCoordinates: (0, 4) -> great-great-granduncle, great-great-grandaunt
+ExtendedCousinCoordinates: (0, 5) -> great-great-great-granduncle, great-great-great-grandaunt
+ExtendedCousinCoordinates: (1, -5) -> 1st cousin 5 times removed
+ExtendedCousinCoordinates: (1, -4) -> 1st cousin 4 times removed
+ExtendedCousinCoordinates: (1, -3) -> 1st cousin thrice removed
+ExtendedCousinCoordinates: (1, -2) -> 1st cousin twice removed
+ExtendedCousinCoordinates: (1, -1) -> 1st cousin once removed
+ExtendedCousinCoordinates: (1, 0) -> 1st cousin
+ExtendedCousinCoordinates: (1, 1) -> 1st cousin once removed
+ExtendedCousinCoordinates: (1, 2) -> 1st cousin twice removed
+ExtendedCousinCoordinates: (1, 3) -> 1st cousin thrice removed
+ExtendedCousinCoordinates: (1, 4) -> 1st cousin 4 times removed
+ExtendedCousinCoordinates: (1, 5) -> 1st cousin 5 times removed
+ExtendedCousinCoordinates: (2, -5) -> 2nd cousin 5 times removed
+ExtendedCousinCoordinates: (2, -4) -> 2nd cousin 4 times removed
+ExtendedCousinCoordinates: (2, -3) -> 2nd cousin thrice removed
+ExtendedCousinCoordinates: (2, -2) -> 2nd cousin twice removed
+ExtendedCousinCoordinates: (2, -1) -> 2nd cousin once removed
+ExtendedCousinCoordinates: (2, 0) -> 2nd cousin
+ExtendedCousinCoordinates: (2, 1) -> 2nd cousin once removed
+ExtendedCousinCoordinates: (2, 2) -> 2nd cousin twice removed
+ExtendedCousinCoordinates: (2, 3) -> 2nd cousin thrice removed
+ExtendedCousinCoordinates: (2, 4) -> 2nd cousin 4 times removed
+ExtendedCousinCoordinates: (2, 5) -> 2nd cousin 5 times removed
+ExtendedCousinCoordinates: (3, -5) -> 3rd cousin 5 times removed
+ExtendedCousinCoordinates: (3, -4) -> 3rd cousin 4 times removed
+ExtendedCousinCoordinates: (3, -3) -> 3rd cousin thrice removed
+ExtendedCousinCoordinates: (3, -2) -> 3rd cousin twice removed
+ExtendedCousinCoordinates: (3, -1) -> 3rd cousin once removed
+ExtendedCousinCoordinates: (3, 0) -> 3rd cousin
+ExtendedCousinCoordinates: (3, 1) -> 3rd cousin once removed
+ExtendedCousinCoordinates: (3, 2) -> 3rd cousin twice removed
+ExtendedCousinCoordinates: (3, 3) -> 3rd cousin thrice removed
+ExtendedCousinCoordinates: (3, 4) -> 3rd cousin 4 times removed
+ExtendedCousinCoordinates: (3, 5) -> 3rd cousin 5 times removed
+ExtendedCousinCoordinates: (4, -5) -> 4th cousin 5 times removed
+ExtendedCousinCoordinates: (4, -4) -> 4th cousin 4 times removed
+ExtendedCousinCoordinates: (4, -3) -> 4th cousin thrice removed
+ExtendedCousinCoordinates: (4, -2) -> 4th cousin twice removed
+ExtendedCousinCoordinates: (4, -1) -> 4th cousin once removed
+ExtendedCousinCoordinates: (4, 0) -> 4th cousin
+ExtendedCousinCoordinates: (4, 1) -> 4th cousin once removed
+ExtendedCousinCoordinates: (4, 2) -> 4th cousin twice removed
+ExtendedCousinCoordinates: (4, 3) -> 4th cousin thrice removed
+ExtendedCousinCoordinates: (4, 4) -> 4th cousin 4 times removed
+ExtendedCousinCoordinates: (4, 5) -> 4th cousin 5 times removed
+ExtendedCousinCoordinates: (5, -5) -> 5th cousin 5 times removed
+ExtendedCousinCoordinates: (5, -4) -> 5th cousin 4 times removed
+ExtendedCousinCoordinates: (5, -3) -> 5th cousin thrice removed
+ExtendedCousinCoordinates: (5, -2) -> 5th cousin twice removed
+ExtendedCousinCoordinates: (5, -1) -> 5th cousin once removed
+ExtendedCousinCoordinates: (5, 0) -> 5th cousin
+ExtendedCousinCoordinates: (5, 1) -> 5th cousin once removed
+ExtendedCousinCoordinates: (5, 2) -> 5th cousin twice removed
+ExtendedCousinCoordinates: (5, 3) -> 5th cousin thrice removed
+ExtendedCousinCoordinates: (5, 4) -> 5th cousin 4 times removed
+ExtendedCousinCoordinates: (5, 5) -> 5th cousin 5 times removed
