@@ -1,0 +1,726 @@
+
+Path: [child, child, child, child, child, child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-9, 4)
+GenerationsToSharedPointCoordinates: (-9, -4)
+ExtendedCousinCoordinates: (-5, -5)
+common name: great-great-great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-8, 4)
+GenerationsToSharedPointCoordinates: (-8, -4)
+ExtendedCousinCoordinates: (-5, -4)
+common name: great-great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-7, 4)
+GenerationsToSharedPointCoordinates: (-7, -4)
+ExtendedCousinCoordinates: (-5, -3)
+common name: great-great-great-great-great-grandson's great-great-grandfather, great-great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-great-grandson's great-great-grandmother, great-great-great-great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-6, 4)
+GenerationsToSharedPointCoordinates: (-6, -4)
+ExtendedCousinCoordinates: (-5, -2)
+common name: great-great-great-great-grandson's great-great-grandfather, great-great-great-great-granddaughter's great-great-grandfather, great-great-great-great-grandson's great-great-grandmother, great-great-great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-5, 4)
+GenerationsToSharedPointCoordinates: (-5, -4)
+ExtendedCousinCoordinates: (-5, -1)
+common name: great-great-great-grandson's great-great-grandfather, great-great-great-granddaughter's great-great-grandfather, great-great-great-grandson's great-great-grandmother, great-great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 4)
+GenerationsToSharedPointCoordinates: (-4, -4)
+ExtendedCousinCoordinates: (-5, 0)
+common name: great-great-grandson's great-great-grandfather, great-great-granddaughter's great-great-grandfather, great-great-grandson's great-great-grandmother, great-great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 5)
+GenerationsToSharedPointCoordinates: (-4, -5)
+ExtendedCousinCoordinates: (-5, 1)
+common name: great-great-grandson's great-great-great-grandfather, great-great-granddaughter's great-great-great-grandfather, great-great-grandson's great-great-great-grandmother, great-great-granddaughter's great-great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 6)
+GenerationsToSharedPointCoordinates: (-4, -6)
+ExtendedCousinCoordinates: (-5, 2)
+common name: great-great-grandson's great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-grandfather, great-great-grandson's great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 7)
+GenerationsToSharedPointCoordinates: (-4, -7)
+ExtendedCousinCoordinates: (-5, 3)
+common name: great-great-grandson's great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 8)
+GenerationsToSharedPointCoordinates: (-4, -8)
+ExtendedCousinCoordinates: (-5, 4)
+common name: great-great-grandson's great-great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-4, 9)
+GenerationsToSharedPointCoordinates: (-4, -9)
+ExtendedCousinCoordinates: (-5, 5)
+common name: great-great-grandson's great-great-great-great-great-great-great-grandfather, great-great-granddaughter's great-great-great-great-great-great-great-grandfather, great-great-grandson's great-great-great-great-great-great-great-grandmother, great-great-granddaughter's great-great-great-great-great-great-great-grandmother
+
+Path: [child, child, child, child, child, child, child, child, parent, parent, parent]
+NumberedRepresentation: (-8, 3)
+GenerationsToSharedPointCoordinates: (-8, -3)
+ExtendedCousinCoordinates: (-4, -5)
+common name: great-great-great-great-great-great-grandson's great-grandfather, great-great-great-great-great-great-granddaughter's great-grandfather, great-great-great-great-great-great-grandson's great-grandmother, great-great-great-great-great-great-granddaughter's great-grandmother
+
+Path: [child, child, child, child, child, child, child, parent, parent, parent]
+NumberedRepresentation: (-7, 3)
+GenerationsToSharedPointCoordinates: (-7, -3)
+ExtendedCousinCoordinates: (-4, -4)
+common name: great-great-great-great-great-grandson's great-grandfather, great-great-great-great-great-granddaughter's great-grandfather, great-great-great-great-great-grandson's great-grandmother, great-great-great-great-great-granddaughter's great-grandmother
+
+Path: [child, child, child, child, child, child, parent, parent, parent]
+NumberedRepresentation: (-6, 3)
+GenerationsToSharedPointCoordinates: (-6, -3)
+ExtendedCousinCoordinates: (-4, -3)
+common name: great-great-great-great-grandson's great-grandfather, great-great-great-great-granddaughter's great-grandfather, great-great-great-great-grandson's great-grandmother, great-great-great-great-granddaughter's great-grandmother
+
+Path: [child, child, child, child, child, parent, parent, parent]
+NumberedRepresentation: (-5, 3)
+GenerationsToSharedPointCoordinates: (-5, -3)
+ExtendedCousinCoordinates: (-4, -2)
+common name: great-great-great-grandson's great-grandfather, great-great-great-granddaughter's great-grandfather, great-great-great-grandson's great-grandmother, great-great-great-granddaughter's great-grandmother
+
+Path: [child, child, child, child, parent, parent, parent]
+NumberedRepresentation: (-4, 3)
+GenerationsToSharedPointCoordinates: (-4, -3)
+ExtendedCousinCoordinates: (-4, -1)
+common name: great-great-grandson's great-grandfather, great-great-granddaughter's great-grandfather, great-great-grandson's great-grandmother, great-great-granddaughter's great-grandmother
+
+Path: [child, child, child, parent, parent, parent]
+NumberedRepresentation: (-3, 3)
+GenerationsToSharedPointCoordinates: (-3, -3)
+ExtendedCousinCoordinates: (-4, 0)
+common name: great-grandson's great-grandfather, great-granddaughter's great-grandfather, great-grandson's great-grandmother, great-granddaughter's great-grandmother
+
+Path: [child, child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-3, 4)
+GenerationsToSharedPointCoordinates: (-3, -4)
+ExtendedCousinCoordinates: (-4, 1)
+common name: great-grandson's great-great-grandfather, great-granddaughter's great-great-grandfather, great-grandson's great-great-grandmother, great-granddaughter's great-great-grandmother
+
+Path: [child, child, child, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-3, 5)
+GenerationsToSharedPointCoordinates: (-3, -5)
+ExtendedCousinCoordinates: (-4, 2)
+common name: great-grandson's great-great-great-grandfather, great-granddaughter's great-great-great-grandfather, great-grandson's great-great-great-grandmother, great-granddaughter's great-great-great-grandmother
+
+Path: [child, child, child, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-3, 6)
+GenerationsToSharedPointCoordinates: (-3, -6)
+ExtendedCousinCoordinates: (-4, 3)
+common name: great-grandson's great-great-great-great-grandfather, great-granddaughter's great-great-great-great-grandfather, great-grandson's great-great-great-great-grandmother, great-granddaughter's great-great-great-great-grandmother
+
+Path: [child, child, child, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-3, 7)
+GenerationsToSharedPointCoordinates: (-3, -7)
+ExtendedCousinCoordinates: (-4, 4)
+common name: great-grandson's great-great-great-great-great-grandfather, great-granddaughter's great-great-great-great-great-grandfather, great-grandson's great-great-great-great-great-grandmother, great-granddaughter's great-great-great-great-great-grandmother
+
+Path: [child, child, child, parent, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-3, 8)
+GenerationsToSharedPointCoordinates: (-3, -8)
+ExtendedCousinCoordinates: (-4, 5)
+common name: great-grandson's great-great-great-great-great-great-grandfather, great-granddaughter's great-great-great-great-great-great-grandfather, great-grandson's great-great-great-great-great-great-grandmother, great-granddaughter's great-great-great-great-great-great-grandmother
+
+Path: [child, child, child, child, child, child, child, parent, parent]
+NumberedRepresentation: (-7, 2)
+GenerationsToSharedPointCoordinates: (-7, -2)
+ExtendedCousinCoordinates: (-3, -5)
+common name: great-great-great-great-great-grandson's grandfather, great-great-great-great-great-granddaughter's grandfather, great-great-great-great-great-grandson's grandmother, great-great-great-great-great-granddaughter's grandmother
+
+Path: [child, child, child, child, child, child, parent, parent]
+NumberedRepresentation: (-6, 2)
+GenerationsToSharedPointCoordinates: (-6, -2)
+ExtendedCousinCoordinates: (-3, -4)
+common name: great-great-great-great-grandson's grandfather, great-great-great-great-granddaughter's grandfather, great-great-great-great-grandson's grandmother, great-great-great-great-granddaughter's grandmother
+
+Path: [child, child, child, child, child, parent, parent]
+NumberedRepresentation: (-5, 2)
+GenerationsToSharedPointCoordinates: (-5, -2)
+ExtendedCousinCoordinates: (-3, -3)
+common name: great-great-great-grandson's grandfather, great-great-great-granddaughter's grandfather, great-great-great-grandson's grandmother, great-great-great-granddaughter's grandmother
+
+Path: [child, child, child, child, parent, parent]
+NumberedRepresentation: (-4, 2)
+GenerationsToSharedPointCoordinates: (-4, -2)
+ExtendedCousinCoordinates: (-3, -2)
+common name: great-great-grandson's grandfather, great-great-granddaughter's grandfather, great-great-grandson's grandmother, great-great-granddaughter's grandmother
+
+Path: [child, child, child, parent, parent]
+NumberedRepresentation: (-3, 2)
+GenerationsToSharedPointCoordinates: (-3, -2)
+ExtendedCousinCoordinates: (-3, -1)
+common name: great-grandson's grandfather, great-granddaughter's grandfather, great-grandson's grandmother, great-granddaughter's grandmother
+
+Path: [child, child, parent, parent]
+NumberedRepresentation: (-2, 2)
+GenerationsToSharedPointCoordinates: (-2, -2)
+ExtendedCousinCoordinates: (-3, 0)
+common name: grandson's grandfather, granddaughter's grandfather, grandson's grandmother, granddaughter's grandmother
+
+Path: [child, child, parent, parent, parent]
+NumberedRepresentation: (-2, 3)
+GenerationsToSharedPointCoordinates: (-2, -3)
+ExtendedCousinCoordinates: (-3, 1)
+common name: grandson's great-grandfather, granddaughter's great-grandfather, grandson's great-grandmother, granddaughter's great-grandmother
+
+Path: [child, child, parent, parent, parent, parent]
+NumberedRepresentation: (-2, 4)
+GenerationsToSharedPointCoordinates: (-2, -4)
+ExtendedCousinCoordinates: (-3, 2)
+common name: grandson's great-great-grandfather, granddaughter's great-great-grandfather, grandson's great-great-grandmother, granddaughter's great-great-grandmother
+
+Path: [child, child, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-2, 5)
+GenerationsToSharedPointCoordinates: (-2, -5)
+ExtendedCousinCoordinates: (-3, 3)
+common name: grandson's great-great-great-grandfather, granddaughter's great-great-great-grandfather, grandson's great-great-great-grandmother, granddaughter's great-great-great-grandmother
+
+Path: [child, child, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-2, 6)
+GenerationsToSharedPointCoordinates: (-2, -6)
+ExtendedCousinCoordinates: (-3, 4)
+common name: grandson's great-great-great-great-grandfather, granddaughter's great-great-great-great-grandfather, grandson's great-great-great-great-grandmother, granddaughter's great-great-great-great-grandmother
+
+Path: [child, child, parent, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-2, 7)
+GenerationsToSharedPointCoordinates: (-2, -7)
+ExtendedCousinCoordinates: (-3, 5)
+common name: grandson's great-great-great-great-great-grandfather, granddaughter's great-great-great-great-great-grandfather, grandson's great-great-great-great-great-grandmother, granddaughter's great-great-great-great-great-grandmother
+
+Path: [child, child, child, child, child, child, parent]
+NumberedRepresentation: (-6, 1)
+GenerationsToSharedPointCoordinates: (-6, -1)
+ExtendedCousinCoordinates: (-2, -5)
+common name: great-great-great-great-grandson's father, great-great-great-great-granddaughter's father, great-great-great-great-grandson's mother, great-great-great-great-granddaughter's mother
+
+Path: [child, child, child, child, child, parent]
+NumberedRepresentation: (-5, 1)
+GenerationsToSharedPointCoordinates: (-5, -1)
+ExtendedCousinCoordinates: (-2, -4)
+common name: great-great-great-grandson's father, great-great-great-granddaughter's father, great-great-great-grandson's mother, great-great-great-granddaughter's mother
+
+Path: [child, child, child, child, parent]
+NumberedRepresentation: (-4, 1)
+GenerationsToSharedPointCoordinates: (-4, -1)
+ExtendedCousinCoordinates: (-2, -3)
+common name: great-great-grandson's father, great-great-granddaughter's father, great-great-grandson's mother, great-great-granddaughter's mother
+
+Path: [child, child, child, parent]
+NumberedRepresentation: (-3, 1)
+GenerationsToSharedPointCoordinates: (-3, -1)
+ExtendedCousinCoordinates: (-2, -2)
+common name: great-grandson's father, great-granddaughter's father, great-grandson's mother, great-granddaughter's mother
+
+Path: [child, child, parent]
+NumberedRepresentation: (-2, 1)
+GenerationsToSharedPointCoordinates: (-2, -1)
+ExtendedCousinCoordinates: (-2, -1)
+common name: grandson's father, granddaughter's father, grandson's mother, granddaughter's mother
+
+Path: [child, parent]
+NumberedRepresentation: (-1, 1)
+GenerationsToSharedPointCoordinates: (-1, -1)
+ExtendedCousinCoordinates: (-2, 0)
+common name: son's father, daughter's father, son's mother, daughter's mother
+
+Path: [child, parent, parent]
+NumberedRepresentation: (-1, 2)
+GenerationsToSharedPointCoordinates: (-1, -2)
+ExtendedCousinCoordinates: (-2, 1)
+common name: son's grandfather, daughter's grandfather, son's grandmother, daughter's grandmother
+
+Path: [child, parent, parent, parent]
+NumberedRepresentation: (-1, 3)
+GenerationsToSharedPointCoordinates: (-1, -3)
+ExtendedCousinCoordinates: (-2, 2)
+common name: son's great-grandfather, daughter's great-grandfather, son's great-grandmother, daughter's great-grandmother
+
+Path: [child, parent, parent, parent, parent]
+NumberedRepresentation: (-1, 4)
+GenerationsToSharedPointCoordinates: (-1, -4)
+ExtendedCousinCoordinates: (-2, 3)
+common name: son's great-great-grandfather, daughter's great-great-grandfather, son's great-great-grandmother, daughter's great-great-grandmother
+
+Path: [child, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-1, 5)
+GenerationsToSharedPointCoordinates: (-1, -5)
+ExtendedCousinCoordinates: (-2, 4)
+common name: son's great-great-great-grandfather, daughter's great-great-great-grandfather, son's great-great-great-grandmother, daughter's great-great-great-grandmother
+
+Path: [child, parent, parent, parent, parent, parent, parent]
+NumberedRepresentation: (-1, 6)
+GenerationsToSharedPointCoordinates: (-1, -6)
+ExtendedCousinCoordinates: (-2, 5)
+common name: son's great-great-great-great-grandfather, daughter's great-great-great-great-grandfather, son's great-great-great-great-grandmother, daughter's great-great-great-great-grandmother
+
+Path: [child, child, child, child, child]
+NumberedRepresentation: (-5)
+GenerationsToSharedPointCoordinates: (0, 5)
+ExtendedCousinCoordinates: (-1, -5)
+common name: great-great-great-grandson, great-great-great-granddaughter
+
+Path: [child, child, child, child]
+NumberedRepresentation: (-4)
+GenerationsToSharedPointCoordinates: (0, 4)
+ExtendedCousinCoordinates: (-1, -4)
+common name: great-great-grandson, great-great-granddaughter
+
+Path: [child, child, child]
+NumberedRepresentation: (-3)
+GenerationsToSharedPointCoordinates: (0, 3)
+ExtendedCousinCoordinates: (-1, -3)
+common name: great-grandson, great-granddaughter
+
+Path: [child, child]
+NumberedRepresentation: (-2)
+GenerationsToSharedPointCoordinates: (0, 2)
+ExtendedCousinCoordinates: (-1, -2)
+common name: grandson, granddaughter
+
+Path: [child]
+NumberedRepresentation: (-1)
+GenerationsToSharedPointCoordinates: (0, 1)
+ExtendedCousinCoordinates: (-1, -1)
+common name: son, daughter
+
+Path: []
+NumberedRepresentation: ()
+GenerationsToSharedPointCoordinates: (0, 0)
+ExtendedCousinCoordinates: (-1, 0)
+common name: self
+
+Path: [parent]
+NumberedRepresentation: (1)
+GenerationsToSharedPointCoordinates: (1, 0)
+ExtendedCousinCoordinates: (-1, 1)
+common name: father, mother
+
+Path: [parent, parent]
+NumberedRepresentation: (2)
+GenerationsToSharedPointCoordinates: (2, 0)
+ExtendedCousinCoordinates: (-1, 2)
+common name: grandfather, grandmother
+
+Path: [parent, parent, parent]
+NumberedRepresentation: (3)
+GenerationsToSharedPointCoordinates: (3, 0)
+ExtendedCousinCoordinates: (-1, 3)
+common name: great-grandfather, great-grandmother
+
+Path: [parent, parent, parent, parent]
+NumberedRepresentation: (4)
+GenerationsToSharedPointCoordinates: (4, 0)
+ExtendedCousinCoordinates: (-1, 4)
+common name: great-great-grandfather, great-great-grandmother
+
+Path: [parent, parent, parent, parent, parent]
+NumberedRepresentation: (5)
+GenerationsToSharedPointCoordinates: (5, 0)
+ExtendedCousinCoordinates: (-1, 5)
+common name: great-great-great-grandfather, great-great-great-grandmother
+
+Path: [parent, child, child, child, child, child, child]
+NumberedRepresentation: (1, -6)
+GenerationsToSharedPointCoordinates: (1, 6)
+ExtendedCousinCoordinates: (0, -5)
+common name: great-great-great-grandnephew, great-great-great-grandniece
+
+Path: [parent, child, child, child, child, child]
+NumberedRepresentation: (1, -5)
+GenerationsToSharedPointCoordinates: (1, 5)
+ExtendedCousinCoordinates: (0, -4)
+common name: great-great-grandnephew, great-great-grandniece
+
+Path: [parent, child, child, child, child]
+NumberedRepresentation: (1, -4)
+GenerationsToSharedPointCoordinates: (1, 4)
+ExtendedCousinCoordinates: (0, -3)
+common name: great-grandnephew, great-grandniece
+
+Path: [parent, child, child, child]
+NumberedRepresentation: (1, -3)
+GenerationsToSharedPointCoordinates: (1, 3)
+ExtendedCousinCoordinates: (0, -2)
+common name: grandnephew, grandniece
+
+Path: [parent, child, child]
+NumberedRepresentation: (1, -2)
+GenerationsToSharedPointCoordinates: (1, 2)
+ExtendedCousinCoordinates: (0, -1)
+common name: nephew, niece
+
+Path: [parent, child]
+NumberedRepresentation: (1, -1)
+GenerationsToSharedPointCoordinates: (1, 1)
+ExtendedCousinCoordinates: (0, 0)
+common name: brother, sister
+
+Path: [parent, parent, child]
+NumberedRepresentation: (2, -1)
+GenerationsToSharedPointCoordinates: (2, 1)
+ExtendedCousinCoordinates: (0, 1)
+common name: uncle, aunt
+
+Path: [parent, parent, parent, child]
+NumberedRepresentation: (3, -1)
+GenerationsToSharedPointCoordinates: (3, 1)
+ExtendedCousinCoordinates: (0, 2)
+common name: great-uncle, great-aunt
+
+Path: [parent, parent, parent, parent, child]
+NumberedRepresentation: (4, -1)
+GenerationsToSharedPointCoordinates: (4, 1)
+ExtendedCousinCoordinates: (0, 3)
+common name: great-granduncle, great-grandaunt
+
+Path: [parent, parent, parent, parent, parent, child]
+NumberedRepresentation: (5, -1)
+GenerationsToSharedPointCoordinates: (5, 1)
+ExtendedCousinCoordinates: (0, 4)
+common name: great-great-granduncle, great-great-grandaunt
+
+Path: [parent, parent, parent, parent, parent, parent, child]
+NumberedRepresentation: (6, -1)
+GenerationsToSharedPointCoordinates: (6, 1)
+ExtendedCousinCoordinates: (0, 5)
+common name: great-great-great-granduncle, great-great-great-grandaunt
+
+Path: [parent, parent, child, child, child, child, child, child, child]
+NumberedRepresentation: (2, -7)
+GenerationsToSharedPointCoordinates: (2, 7)
+ExtendedCousinCoordinates: (1, -5)
+common name: 1st cousin 5 times removed
+
+Path: [parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (2, -6)
+GenerationsToSharedPointCoordinates: (2, 6)
+ExtendedCousinCoordinates: (1, -4)
+common name: 1st cousin 4 times removed
+
+Path: [parent, parent, child, child, child, child, child]
+NumberedRepresentation: (2, -5)
+GenerationsToSharedPointCoordinates: (2, 5)
+ExtendedCousinCoordinates: (1, -3)
+common name: 1st cousin thrice removed
+
+Path: [parent, parent, child, child, child, child]
+NumberedRepresentation: (2, -4)
+GenerationsToSharedPointCoordinates: (2, 4)
+ExtendedCousinCoordinates: (1, -2)
+common name: 1st cousin twice removed
+
+Path: [parent, parent, child, child, child]
+NumberedRepresentation: (2, -3)
+GenerationsToSharedPointCoordinates: (2, 3)
+ExtendedCousinCoordinates: (1, -1)
+common name: 1st cousin once removed
+
+Path: [parent, parent, child, child]
+NumberedRepresentation: (2, -2)
+GenerationsToSharedPointCoordinates: (2, 2)
+ExtendedCousinCoordinates: (1, 0)
+common name: 1st cousin
+
+Path: [parent, parent, parent, child, child]
+NumberedRepresentation: (3, -2)
+GenerationsToSharedPointCoordinates: (3, 2)
+ExtendedCousinCoordinates: (1, 1)
+common name: 1st cousin once removed
+
+Path: [parent, parent, parent, parent, child, child]
+NumberedRepresentation: (4, -2)
+GenerationsToSharedPointCoordinates: (4, 2)
+ExtendedCousinCoordinates: (1, 2)
+common name: 1st cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, child, child]
+NumberedRepresentation: (5, -2)
+GenerationsToSharedPointCoordinates: (5, 2)
+ExtendedCousinCoordinates: (1, 3)
+common name: 1st cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child]
+NumberedRepresentation: (6, -2)
+GenerationsToSharedPointCoordinates: (6, 2)
+ExtendedCousinCoordinates: (1, 4)
+common name: 1st cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, child, child]
+NumberedRepresentation: (7, -2)
+GenerationsToSharedPointCoordinates: (7, 2)
+ExtendedCousinCoordinates: (1, 5)
+common name: 1st cousin 5 times removed
+
+Path: [parent, parent, parent, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (3, -8)
+GenerationsToSharedPointCoordinates: (3, 8)
+ExtendedCousinCoordinates: (2, -5)
+common name: 2nd cousin 5 times removed
+
+Path: [parent, parent, parent, child, child, child, child, child, child, child]
+NumberedRepresentation: (3, -7)
+GenerationsToSharedPointCoordinates: (3, 7)
+ExtendedCousinCoordinates: (2, -4)
+common name: 2nd cousin 4 times removed
+
+Path: [parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (3, -6)
+GenerationsToSharedPointCoordinates: (3, 6)
+ExtendedCousinCoordinates: (2, -3)
+common name: 2nd cousin thrice removed
+
+Path: [parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (3, -5)
+GenerationsToSharedPointCoordinates: (3, 5)
+ExtendedCousinCoordinates: (2, -2)
+common name: 2nd cousin twice removed
+
+Path: [parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (3, -4)
+GenerationsToSharedPointCoordinates: (3, 4)
+ExtendedCousinCoordinates: (2, -1)
+common name: 2nd cousin once removed
+
+Path: [parent, parent, parent, child, child, child]
+NumberedRepresentation: (3, -3)
+GenerationsToSharedPointCoordinates: (3, 3)
+ExtendedCousinCoordinates: (2, 0)
+common name: 2nd cousin
+
+Path: [parent, parent, parent, parent, child, child, child]
+NumberedRepresentation: (4, -3)
+GenerationsToSharedPointCoordinates: (4, 3)
+ExtendedCousinCoordinates: (2, 1)
+common name: 2nd cousin once removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child]
+NumberedRepresentation: (5, -3)
+GenerationsToSharedPointCoordinates: (5, 3)
+ExtendedCousinCoordinates: (2, 2)
+common name: 2nd cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child]
+NumberedRepresentation: (6, -3)
+GenerationsToSharedPointCoordinates: (6, 3)
+ExtendedCousinCoordinates: (2, 3)
+common name: 2nd cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, child, child, child]
+NumberedRepresentation: (7, -3)
+GenerationsToSharedPointCoordinates: (7, 3)
+ExtendedCousinCoordinates: (2, 4)
+common name: 2nd cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, child, child, child]
+NumberedRepresentation: (8, -3)
+GenerationsToSharedPointCoordinates: (8, 3)
+ExtendedCousinCoordinates: (2, 5)
+common name: 2nd cousin 5 times removed
+
+Path: [parent, parent, parent, parent, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (4, -9)
+GenerationsToSharedPointCoordinates: (4, 9)
+ExtendedCousinCoordinates: (3, -5)
+common name: 3rd cousin 5 times removed
+
+Path: [parent, parent, parent, parent, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (4, -8)
+GenerationsToSharedPointCoordinates: (4, 8)
+ExtendedCousinCoordinates: (3, -4)
+common name: 3rd cousin 4 times removed
+
+Path: [parent, parent, parent, parent, child, child, child, child, child, child, child]
+NumberedRepresentation: (4, -7)
+GenerationsToSharedPointCoordinates: (4, 7)
+ExtendedCousinCoordinates: (3, -3)
+common name: 3rd cousin thrice removed
+
+Path: [parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (4, -6)
+GenerationsToSharedPointCoordinates: (4, 6)
+ExtendedCousinCoordinates: (3, -2)
+common name: 3rd cousin twice removed
+
+Path: [parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (4, -5)
+GenerationsToSharedPointCoordinates: (4, 5)
+ExtendedCousinCoordinates: (3, -1)
+common name: 3rd cousin once removed
+
+Path: [parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (4, -4)
+GenerationsToSharedPointCoordinates: (4, 4)
+ExtendedCousinCoordinates: (3, 0)
+common name: 3rd cousin
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (5, -4)
+GenerationsToSharedPointCoordinates: (5, 4)
+ExtendedCousinCoordinates: (3, 1)
+common name: 3rd cousin once removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (6, -4)
+GenerationsToSharedPointCoordinates: (6, 4)
+ExtendedCousinCoordinates: (3, 2)
+common name: 3rd cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (7, -4)
+GenerationsToSharedPointCoordinates: (7, 4)
+ExtendedCousinCoordinates: (3, 3)
+common name: 3rd cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (8, -4)
+GenerationsToSharedPointCoordinates: (8, 4)
+ExtendedCousinCoordinates: (3, 4)
+common name: 3rd cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child]
+NumberedRepresentation: (9, -4)
+GenerationsToSharedPointCoordinates: (9, 4)
+ExtendedCousinCoordinates: (3, 5)
+common name: 3rd cousin 5 times removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (5, -10)
+GenerationsToSharedPointCoordinates: (5, 10)
+ExtendedCousinCoordinates: (4, -5)
+common name: 4th cousin 5 times removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (5, -9)
+GenerationsToSharedPointCoordinates: (5, 9)
+ExtendedCousinCoordinates: (4, -4)
+common name: 4th cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (5, -8)
+GenerationsToSharedPointCoordinates: (5, 8)
+ExtendedCousinCoordinates: (4, -3)
+common name: 4th cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child, child, child]
+NumberedRepresentation: (5, -7)
+GenerationsToSharedPointCoordinates: (5, 7)
+ExtendedCousinCoordinates: (4, -2)
+common name: 4th cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (5, -6)
+GenerationsToSharedPointCoordinates: (5, 6)
+ExtendedCousinCoordinates: (4, -1)
+common name: 4th cousin once removed
+
+Path: [parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (5, -5)
+GenerationsToSharedPointCoordinates: (5, 5)
+ExtendedCousinCoordinates: (4, 0)
+common name: 4th cousin
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (6, -5)
+GenerationsToSharedPointCoordinates: (6, 5)
+ExtendedCousinCoordinates: (4, 1)
+common name: 4th cousin once removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (7, -5)
+GenerationsToSharedPointCoordinates: (7, 5)
+ExtendedCousinCoordinates: (4, 2)
+common name: 4th cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (8, -5)
+GenerationsToSharedPointCoordinates: (8, 5)
+ExtendedCousinCoordinates: (4, 3)
+common name: 4th cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (9, -5)
+GenerationsToSharedPointCoordinates: (9, 5)
+ExtendedCousinCoordinates: (4, 4)
+common name: 4th cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child]
+NumberedRepresentation: (10, -5)
+GenerationsToSharedPointCoordinates: (10, 5)
+ExtendedCousinCoordinates: (4, 5)
+common name: 4th cousin 5 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (6, -11)
+GenerationsToSharedPointCoordinates: (6, 11)
+ExtendedCousinCoordinates: (5, -5)
+common name: 5th cousin 5 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (6, -10)
+GenerationsToSharedPointCoordinates: (6, 10)
+ExtendedCousinCoordinates: (5, -4)
+common name: 5th cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (6, -9)
+GenerationsToSharedPointCoordinates: (6, 9)
+ExtendedCousinCoordinates: (5, -3)
+common name: 5th cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child, child, child]
+NumberedRepresentation: (6, -8)
+GenerationsToSharedPointCoordinates: (6, 8)
+ExtendedCousinCoordinates: (5, -2)
+common name: 5th cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child, child]
+NumberedRepresentation: (6, -7)
+GenerationsToSharedPointCoordinates: (6, 7)
+ExtendedCousinCoordinates: (5, -1)
+common name: 5th cousin once removed
+
+Path: [parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (6, -6)
+GenerationsToSharedPointCoordinates: (6, 6)
+ExtendedCousinCoordinates: (5, 0)
+common name: 5th cousin
+
+Path: [parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (7, -6)
+GenerationsToSharedPointCoordinates: (7, 6)
+ExtendedCousinCoordinates: (5, 1)
+common name: 5th cousin once removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (8, -6)
+GenerationsToSharedPointCoordinates: (8, 6)
+ExtendedCousinCoordinates: (5, 2)
+common name: 5th cousin twice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (9, -6)
+GenerationsToSharedPointCoordinates: (9, 6)
+ExtendedCousinCoordinates: (5, 3)
+common name: 5th cousin thrice removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (10, -6)
+GenerationsToSharedPointCoordinates: (10, 6)
+ExtendedCousinCoordinates: (5, 4)
+common name: 5th cousin 4 times removed
+
+Path: [parent, parent, parent, parent, parent, parent, parent, parent, parent, parent, parent, child, child, child, child, child, child]
+NumberedRepresentation: (11, -6)
+GenerationsToSharedPointCoordinates: (11, 6)
+ExtendedCousinCoordinates: (5, 5)
+common name: 5th cousin 5 times removed

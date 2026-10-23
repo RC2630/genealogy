@@ -25,7 +25,7 @@ def common_name(
 ) -> str:
     return g.decompose_and_naturalize([
         construct_path_element(edge_type, parent_gender, child_gender)
-        for edge_type in repr.to_path().path
+        for edge_type in repr.to(Path).path
     ], g.AnyPart).replace("half-", "")
 
 def get_names_to_print(repr: Representation) -> str:
@@ -37,11 +37,11 @@ def get_names_to_print(repr: Representation) -> str:
 
 def main(max: int) -> None:
     with open("output.txt", "w") as f:
-        for repr in generate_all(max):
+        for repr in Representation.generate_all(max):
             f.write(f"{type(repr).__name__}: {repr} -> {get_names_to_print(repr)}\n")
     with open("dense_cousin_coords.txt", "w") as f:
         with redirect_stdout(f):
-            for coord in generate_cousin_coords(max):
+            for coord in ExtendedCousinCoordinates.generate(max):
                 coord.display()
                 print(f"common name: {get_names_to_print(coord)}")
 
